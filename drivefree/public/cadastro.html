@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html ng-app = "app" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cadastro</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+    
+	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body ng-controller = "cadastroController">
+
+    <div class="container-fluid">
+    <div class="row">
+		<div class="col-md-12 header">
+			<div class="">
+				 <h1>DRIVE FREE</h1>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="btn-group navBar">
+				 
+				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/';">
+					 Home
+				</button> 
+				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/servicos.html';">
+					Serviços
+				</button> 
+				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/catalogo.html';">
+					Catálogo
+				</button> 
+				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/quemSomos.html';">
+					Quem Somos
+				</button>
+				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/login.html';">
+					Login
+				</button>
+
+			</div>
+		</div>
+	</div>
+	<div class="row meio">
+		<div class="col-md-12 contentServicos">
+			<form role="form">
+			<div class="form-group">
+			<p id="cadastro">Cadastro Cliente</p>
+			      <label for="nome">Nome:</label>
+			      <input type="text" class="form-control" id="nome">
+			    </div>
+			    <div class="form-group">
+			      <label for="rg">Identidade (rg):</label>
+			      <input type="number" class="form-control" id="rg">
+			    </div>
+			    <div class="form-group">
+			      <label for="sexo">Sexo:</label>
+			      <input type="text" class="form-control" id="sexo">
+			    </div>
+			    <div class="form-group">
+			      <label for="email">E-mail:</label>
+			      <input type="text" class="form-control" id="email">
+			    </div>
+			    <div class="form-group">
+			    <div class="form-group">
+			      <label for="senha">Senha:</label>
+			      <input type="password" class="form-control" id="senha">
+			    </div>
+			<p id="campo-habilitacao">Habilitaçao</p>
+			      <label for="nHabilitacao">Nº da Habilitação:</label>
+			      <input type="number" class="form-control" id="nHabilitacao">
+			    </div>
+			    <div class="form-group">
+			      <label for="validadeHabilitacao">Validade:</label>
+			      <input type="number" class="form-control" id="validadeHabilitacao">
+			    </div>
+			<p id="campo-endereco">Endereço</p>
+			    <div class="form-group">
+			      <label for="cep">CEP:</label>
+			      <input type="number" class="form-control" id="cep">
+			    </div>
+			    <div class="form-group">
+			      <label for="endereco">Endereço:</label>
+			      <input type="text" class="form-control" id="endereco">
+			    </div>
+			    <div class="form-group">
+			      <label for="bairro">Bairro:</label>
+			      <input type="text" class="form-control" id="bairro">
+			    </div>
+			    <div class="form-group">
+			      <label for="cidade">Cidade:</label>
+			      <input type="text" class="form-control" id="cidade">
+			    </div>
+			    <div class="form-group">
+			      <label for="telefone">Telefone:</label>
+			      <input type="number" class="form-control" id="telefone">
+			    </div>
+			   </form>
+		<button class="btn btn-default" type="button">
+			Confirmar
+		</button>
+		<button class="btn btn-default" type="button">
+			Cancelar
+		</button> 
+
+		</div>
+	</div>
+	<div class="row footer">
+		<div class="col-md-12">
+
+			<p>
+			Informações ao consumidor: Drive Free Rent a Car S/A
+			</p>
+			<p>
+			Sede: Avenida Bernardo Monteiro, nº 1563 - Funcionários - CEP: 30150-902 - Belo Horizonte - MG.
+			</p>
+			<p>
+			Central de Reservas 24h: 0800 979 2000 | Asssistência a Clientes 24h: 0800 979 2020
+			</p>
+			<p>
+			E-mail: centraldereservas@drivefree.com
+			</p>
+
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src = "js/app.js"></script>
+    <script src = "js/controller/cadastroController.js"></script>
+  </body>
+</html>

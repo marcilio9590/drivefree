@@ -1,0 +1,82 @@
+.navBar{
+
+	width: 100%;
+	margin: 0px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+
+}
+.descricao-modelo{
+
+	font-weight: bold;
+
+}
+.meio{
+	padding-left:15px;
+	padding-right:15px;
+
+}
+
+.header{
+	background-color: green;
+	text-align: center;
+	padding: 0px;
+}
+
+.box-grupo{
+
+	border-bottom: 2px solid black;
+	width: 100%;
+
+
+}
+.lista{
+	border: 2px solid black;
+	margin: 0px;
+	background-color: white;
+
+}
+#cadastro{
+ text-align: center;
+ font-weight: bold;
+ font-size: 30px;
+}
+#campo-habilitacao{
+	 text-align: center;
+ 	font-weight: bold;
+ 	font-size: 30px;
+}
+#campo-endereco{
+	 text-align: center;
+ 	font-weight: bold;
+ 	font-size: 30px;
+}
+
+.content{
+
+	background-color: white;
+	border: 2px solid black;
+	padding: 1%;
+	margin: 0px;
+	border-right: 0px;
+
+}
+.contentServicos{
+
+	background-color: white;
+	border: 2px solid black;
+	padding: 1%;
+	margin: 0px;
+	
+}
+.footer{
+
+	background-color: #bcbcbc;
+	padding-top: 1%;
+	border-top: 10px solid #4dff4d ;
+
+}
+
+body {
+	background-color: #4dff4d;
+}
