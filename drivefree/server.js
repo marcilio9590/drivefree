@@ -11,7 +11,7 @@ var options = {
   db: { native_parser: true },
   server: { poolSize: 5 }
 }
-mongoose.connect('mongodb://localhost/drivrefree', options);
+mongoose.connect('mongodb://localhost/drivefree', options);
 
 var AppSchema = require('./schema.js').AppSchema;
 var appSchemaInstance = new AppSchema(mongoose);
@@ -21,8 +21,8 @@ var contatoServiceInstance =
 					new ContatoService(mongoose, appSchemaInstance);
 
 //servicos
-app.post('/salvar', function (req, res) {
-	contatoServiceInstance.salvarContato(req.body, function(response){
+app.post('/salvarCarro', function (req, res) {
+	contatoServiceInstance.salvarCarro(req.body, function(response){
 		res.send(response);
 	}, function(err){
 		res.send(err);
