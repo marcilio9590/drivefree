@@ -20,10 +20,23 @@ var CarroService = require('./carroService.js').CarroService;
 var carroServiceInstance = 
 					new CarroService(mongoose, appSchemaInstance);
 
+var ClienteService = require('./clienteService.js').ClienteService;
+var clienteServiceInstance = 
+					new ClienteService(mongoose, appSchemaInstance);
+
 
 //servicos
 app.post('/salvarCarro', function (req, res) {
 	carroServiceInstance.salvarCarro(req.body, function(response){
+		res.send(response);
+	}, function(err){
+		res.send(err);
+	});
+});
+
+//servico salvar cliente
+app.post('/salvarCliente', function (req, res) {
+	clienteServiceInstance.salvarCliente(req.body, function(response){
 		res.send(response);
 	}, function(err){
 		res.send(err);
