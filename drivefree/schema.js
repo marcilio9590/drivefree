@@ -18,6 +18,22 @@ function AppSchema(mongoose){
 		createdOn: {type: Date, default: Date.now}
 	});
 	
+	this.clienteSchema = new Schema({
+		nome: String,
+		identidade: String,
+		sexo: String,
+		email: String,
+		senha: String,
+		nHabilitacao: String,
+		validade: String,
+		cep: String,
+		endereco: String,
+		bairro: String,
+		cidade: String,
+		telefone: String,
+		createdOn: {type: Date, default: Date.now}
+	});
+	
 	
 }
 
