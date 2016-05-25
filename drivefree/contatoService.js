@@ -1,10 +1,10 @@
 function ContatoService(mongoose, appSchema){
-	var Contato = mongoose.model("Contato", appSchema.contatoSchema);	
+	var Carro = mongoose.model("Carro", appSchema.carroSchema);	
 	
-	this.salvarContato = function(p_contato, successCallback, errorCallback){
-		var contatoSave = new Contato(p_contato);
+	this.salvarCarro = function(p_contato, successCallback, errorCallback){
+		var carroSave = new Carro(p_contato);
 		
-		contatoSave.save(function (err, data){
+		carroSave.save(function (err, data){
 			if (err) errorCallback(err);
 			
 			else successCallback(data);

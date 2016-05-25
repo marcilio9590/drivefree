@@ -1,9 +1,12 @@
 function AppSchema(mongoose){
 	var Schema = mongoose.Schema;
 
-	this.contatoSchema = new Schema({
-		nome: String,
-		telefones: [],
+	this.carroSchema = new Schema({
+		modelo: String,
+		ano: String,
+		placa: String,
+		cor: String,
+		categoria: String,
 		createdOn: {type: Date, default: Date.now}
 	});
 }

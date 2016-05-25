@@ -21,8 +21,8 @@ var contatoServiceInstance =
 					new ContatoService(mongoose, appSchemaInstance);
 
 //servicos
-app.post('/salvar', function (req, res) {
-	contatoServiceInstance.salvarContato(req.body, function(response){
+app.post('/salvarCarro', function (req, res) {
+	contatoServiceInstance.salvarCarro(req.body, function(response){
 		res.send(response);
 	}, function(err){
 		res.send(err);
