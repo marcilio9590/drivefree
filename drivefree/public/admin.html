@@ -1,446 +1,316 @@
 <!DOCTYPE html>
-<html ng-app = "app" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html ng-app="app" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Central de Controle Drive Free</title>
+<title>Central de Controle Drive Free</title>
 
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-	
-	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+<meta name="description"
+	content="Source code generated using layoutit.com">
+<meta name="author" content="LayoutIt!">
 
-  </head>
-  <body ng-controller = "adminController">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="jumbotron well">
-				<h2>
-					<center>Drive Free ADMIN!</center>
-				</h2>
-				<p>
+</head>
+<body ng-controller="adminController">
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="jumbotron well">
+					<h2>
+						<center>Drive Free ADMIN!</center>
+					</h2>
+					<p>
 					<center>Central de controle</center>
-				</p>
-			</div>	
+					</p>
+				</div>
+			</div>
 		</div>
-	</div>
 	</div>
 
 	<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<div class="caption">
-							<h3>
-								Adicionar Veículos
-							</h3>
-							<p>
-								<p>Modelo: <input class="form-control" type="text" ng-model = "modelo"  placeholder="Digite o modelo do veículo"></p>
-								<p>Ano: <input class="form-control" type="text" ng-model = "ano"  placeholder="Digite o ano do veículo"></p>
-								<p>Placa: <input class="form-control" type="text" ng-model = "placa"  placeholder="Digite a placa do veículo"></p>
-								
-									<p> Selecione a cor: <select class="form-control" ng-model="cor" >
-									<option value="Vermelho">Vermelho</option> 
-									<option value="Branco">Branco</option>
-									<option value="Prata">Prata</option>
-									<option value="Preto">Preto</option>
-								</select>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<div class="caption">
+								<h3>Adicionar Veículos</h3>
+								<p>
+								<p>
+									Modelo: <input class="form-control" type="text"
+										ng-model="modelo" placeholder="Digite o modelo do veículo">
 								</p>
-																
-								<p> Selecione a categoria: <select class="form-control" ng-model="categoria" name="select">
-									<option value="A">A - Luxo</option> 
-									<option value="B">B - Intermediário</option>
-									<option value="C">C - Popular</option>
-								</select>
+								<p>
+									Ano: <input class="form-control" type="text" ng-model="ano"
+										placeholder="Digite o ano do veículo">
 								</p>
-								
-								
-								<button ng-click="adicionarCarro()">Adicionar</button>
-							</p>
+								<p>
+									Placa: <input class="form-control" type="text" ng-model="placa"
+										placeholder="Digite a placa do veículo">
+								</p>
+
+								<p>
+									Selecione a cor: <select class="form-control" ng-model="cor">
+										<option value="Vermelho">Vermelho</option>
+										<option value="Branco">Branco</option>
+										<option value="Prata">Prata</option>
+										<option value="Preto">Preto</option>
+									</select>
+								</p>
+
+								<p>
+									Selecione a categoria: <select class="form-control"
+										ng-model="categoria" name="select">
+										<option value="A">A - Luxo</option>
+										<option value="B">B - Intermediário</option>
+										<option value="C">C - Popular</option>
+									</select>
+								</p>
+
+
+								<button class="btn btn-success" ng-click="adicionarCarro()">Adicionar</button>
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<div class="caption">
-							<h3>
-								Alterar Veículos
-							</h3>
-							<p>
-								<a class="btn btn-warning" href="#">Alterar</a>
-							</p>	
+
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<div class="caption">
+								<h3>Alterar Veículos</h3>
+								<p>
+									<a class="btn btn-warning" href="#">Alterar</a>
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<div class="caption">
-							<h3>
-								Excluir Veículos
-							</h3>
-							<p>
-								<a class="btn btn-danger" href="#">Excluir</a>
-							</p>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<div class="caption">
+								<h3>Excluir Veículos</h3>
+								<p>
+									<a class="btn btn-danger" href="#">Excluir</a>
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
 
 
 
 
 
 	<div class="col-md-4">
-					<div class="thumbnail">
-						<div class="caption">
-							<h3>
-								<center>Gerenciamento de Categorias: C</center>
-							</h3>
-							<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<table class="table table-bordered table-condensed">
-				<thead>
-					<tr>
-						<th>
-							Placa
-						</th>
-						<th>
-							Ano
-						</th>
-						<th>
-							Modelo
-						</th>
-						<th>
-							Cor
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							KHI-3025
-						</td>
-						<td>
-							2015
-						</td>
-						<td>
-							HB-20
-						</td>
-						<td>
-							Prata
-						</td>
-					</tr>
-					<tr class="active">
-						<td>
-							KTT-2012
-						</td>
-						<td>
-							2016
-						</td>
-						<td>
-							Ford Ká
-						</td>
-						<td>
-							Branco
-						</td>
-					</tr>
-					<tr class="success">
-						<td>
-							ALT-2711
-						</td>
-						<td>
-							2016
-						</td>
-						<td>
-							Gol
-						</td>
-						<td>
-							Preto
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							OLC-8314
-						</td>
-						<td>
-							2016
-						</td>
-						<td>
-							Onix
-						</td>
-						<td>
-							Preto
-						</td>
-					</tr>
-					<tr class="danger">
-						<td>
-							IJE-6709
-						</td>
-						<td>
-							2015
-						</td>
-						<td>
-							Etios
-						</td>
-						<td>
-							Prata
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-</div>
-							
-							<p> <center>
-								<a class="btn btn-primary" href="#">Add</a>
-								<a class="btn btn-warning" href="#">Alter</a>
-								<a class="btn btn-danger" href="#">Drop</a>
-								</center></p>
+		<div class="thumbnail">
+			<div class="caption">
+				<h3>
+					<center>Gerenciamento de Categorias: A</center>
+				</h3>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<table class="table table-bordered table-condensed">
+								<thead>
+									<tr>
+										<th>Placa</th>
+										<th>Ano</th>
+										<th>Modelo</th>
+										<th>Cor</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>KHI-3025</td>
+										<td>2015</td>
+										<td>HB-20</td>
+										<td>Prata</td>
+									</tr>
+									<tr class="active">
+										<td>KTT-2012</td>
+										<td>2016</td>
+										<td>Ford Ká</td>
+										<td>Branco</td>
+									</tr>
+									<tr class="success">
+										<td>ALT-2711</td>
+										<td>2016</td>
+										<td>Gol</td>
+										<td>Preto</td>
+									</tr>
+									<tr class="warning">
+										<td>OLC-8314</td>
+										<td>2016</td>
+										<td>Onix</td>
+										<td>Preto</td>
+									</tr>
+									<tr class="danger">
+										<td>IJE-6709</td>
+										<td>2015</td>
+										<td>Etios</td>
+										<td>Prata</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
-	</div>
-	
-	<div class="col-md-4">
-					<div class="thumbnail">
-						<div class="caption">
-							<h3>
-								<center>Gerenciamento de Categorias: C</center>
-							</h3>
-							<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<table class="table table-bordered table-condensed">
-				<thead>
-					<tr>
-						<th>
-							Placa
-						</th>
-						<th>
-							Ano
-						</th>
-						<th>
-							Modelo
-						</th>
-						<th>
-							Cor
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							KHI-3025
-						</td>
-						<td>
-							2015
-						</td>
-						<td>
-							HB-20
-						</td>
-						<td>
-							Prata
-						</td>
-					</tr>
-					<tr class="active">
-						<td>
-							KTT-2012
-						</td>
-						<td>
-							2016
-						</td>
-						<td>
-							Ford Ká
-						</td>
-						<td>
-							Branco
-						</td>
-					</tr>
-					<tr class="success">
-						<td>
-							ALT-2711
-						</td>
-						<td>
-							2016
-						</td>
-						<td>
-							Gol
-						</td>
-						<td>
-							Preto
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							OLC-8314
-						</td>
-						<td>
-							2016
-						</td>
-						<td>
-							Onix
-						</td>
-						<td>
-							Preto
-						</td>
-					</tr>
-					<tr class="danger">
-						<td>
-							IJE-6709
-						</td>
-						<td>
-							2015
-						</td>
-						<td>
-							Etios
-						</td>
-						<td>
-							Prata
-						</td>
-					</tr>
-				</tbody>
-			</table>
+				</div>
+
+				<p>
+				<center>
+					<a class="btn btn-primary" href="#">Add</a> <a
+						class="btn btn-warning" href="#">Alter</a> <a
+						class="btn btn-danger" href="#">Drop</a>
+				</center>
+				</p>
+			</div>
 		</div>
-	</div>
-</div>
-							
-							<p> <center>
-								<a class="btn btn-primary" href="#">Add</a>
-								<a class="btn btn-warning" href="#">Alter</a>
-								<a class="btn btn-danger" href="#">Drop</a>
-								</center></p>
-						</div>
-					</div>
-	</div>
-	
-	<div class="col-md-4">
-					<div class="thumbnail">
-						<div class="caption">
-							<h3>
-								<center>Gerenciamento de Categorias: C</center>
-							</h3>
-							<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<table class="table table-bordered table-condensed">
-				<thead>
-					<tr>
-						<th>
-							Placa
-						</th>
-						<th>
-							Ano
-						</th>
-						<th>
-							Modelo
-						</th>
-						<th>
-							Cor
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							KHI-3025
-						</td>
-						<td>
-							2015
-						</td>
-						<td>
-							HB-20
-						</td>
-						<td>
-							Prata
-						</td>
-					</tr>
-					<tr class="active">
-						<td>
-							KTT-2012
-						</td>
-						<td>
-							2016
-						</td>
-						<td>
-							Ford Ká
-						</td>
-						<td>
-							Branco
-						</td>
-					</tr>
-					<tr class="success">
-						<td>
-							ALT-2711
-						</td>
-						<td>
-							2016
-						</td>
-						<td>
-							Gol
-						</td>
-						<td>
-							Preto
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							OLC-8314
-						</td>
-						<td>
-							2016
-						</td>
-						<td>
-							Onix
-						</td>
-						<td>
-							Preto
-						</td>
-					</tr>
-					<tr class="danger">
-						<td>
-							IJE-6709
-						</td>
-						<td>
-							2015
-						</td>
-						<td>
-							Etios
-						</td>
-						<td>
-							Prata
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-</div>
-							
-							<p> <center>
-								<a class="btn btn-primary" href="#">Add</a>
-								<a class="btn btn-warning" href="#">Alter</a>
-								<a class="btn btn-danger" href="#">Drop</a>
-								</center></p>
-						</div>
-					</div>
 	</div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src = "js/app.js"></script>
-    <script src = "js/controller/adminController.js"></script>
-  </body>
+	<div class="col-md-4">
+		<div class="thumbnail">
+			<div class="caption">
+				<h3>
+					<center>Gerenciamento de Categorias: B</center>
+				</h3>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<table class="table table-bordered table-condensed">
+								<thead>
+									<tr>
+										<th>Placa</th>
+										<th>Ano</th>
+										<th>Modelo</th>
+										<th>Cor</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>KHI-3025</td>
+										<td>2015</td>
+										<td>HB-20</td>
+										<td>Prata</td>
+									</tr>
+									<tr class="active">
+										<td>KTT-2012</td>
+										<td>2016</td>
+										<td>Ford Ká</td>
+										<td>Branco</td>
+									</tr>
+									<tr class="success">
+										<td>ALT-2711</td>
+										<td>2016</td>
+										<td>Gol</td>
+										<td>Preto</td>
+									</tr>
+									<tr class="warning">
+										<td>OLC-8314</td>
+										<td>2016</td>
+										<td>Onix</td>
+										<td>Preto</td>
+									</tr>
+									<tr class="danger">
+										<td>IJE-6709</td>
+										<td>2015</td>
+										<td>Etios</td>
+										<td>Prata</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<p>
+				<center>
+					<a class="btn btn-primary" href="#">Add</a> <a
+						class="btn btn-warning" href="#">Alter</a> <a
+						class="btn btn-danger" href="#">Drop</a>
+				</center>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="thumbnail">
+			<div class="caption">
+				<h3>
+					<center>Gerenciamento de Categorias: C</center>
+				</h3>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<table class="table table-bordered table-condensed">
+								<thead>
+									<tr>
+										<th>Placa</th>
+										<th>Ano</th>
+										<th>Modelo</th>
+										<th>Cor</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>KHI-3025</td>
+										<td>2015</td>
+										<td>HB-20</td>
+										<td>Prata</td>
+									</tr>
+									<tr class="active">
+										<td>KTT-2012</td>
+										<td>2016</td>
+										<td>Ford Ká</td>
+										<td>Branco</td>
+									</tr>
+									<tr class="success">
+										<td>ALT-2711</td>
+										<td>2016</td>
+										<td>Gol</td>
+										<td>Preto</td>
+									</tr>
+									<tr class="warning">
+										<td>OLC-8314</td>
+										<td>2016</td>
+										<td>Onix</td>
+										<td>Preto</td>
+									</tr>
+									<tr class="danger">
+										<td>IJE-6709</td>
+										<td>2015</td>
+										<td>Etios</td>
+										<td>Prata</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<p>
+				<center>
+					<a class="btn btn-primary" href="#">Add</a> <a
+						class="btn btn-warning" href="#">Alter</a> <a
+						class="btn btn-danger" href="#">Drop</a>
+				</center>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controller/adminController.js"></script>
+</body>
 </html>
