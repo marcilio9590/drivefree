@@ -1,4 +1,4 @@
-function ContatoService(mongoose, appSchema){
+function CarroService(mongoose, appSchema){
 	var Carro = mongoose.model("Carro", appSchema.carroSchema);	
 	
 	this.salvarCarro = function(p_contato, successCallback, errorCallback){
@@ -12,5 +12,5 @@ function ContatoService(mongoose, appSchema){
 	}
 }
 
-module.exports.ContatoService = ContatoService;
+module.exports.CarroService = CarroService;
 
