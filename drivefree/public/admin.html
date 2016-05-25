@@ -119,7 +119,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-12">
-							<table class="table table-bordered table-condensed">
+							<table class="table table-striped table-condensed">
 								<thead>
 									<tr>
 										<th>Placa</th>
@@ -129,35 +129,11 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>KHI-3025</td>
-										<td>2015</td>
-										<td>HB-20</td>
-										<td>Prata</td>
-									</tr>
-									<tr class="active">
-										<td>KTT-2012</td>
-										<td>2016</td>
-										<td>Ford Ká</td>
-										<td>Branco</td>
-									</tr>
-									<tr class="success">
-										<td>ALT-2711</td>
-										<td>2016</td>
-										<td>Gol</td>
-										<td>Preto</td>
-									</tr>
-									<tr class="warning">
-										<td>OLC-8314</td>
-										<td>2016</td>
-										<td>Onix</td>
-										<td>Preto</td>
-									</tr>
-									<tr class="danger">
-										<td>IJE-6709</td>
-										<td>2015</td>
-										<td>Etios</td>
-										<td>Prata</td>
+									<tr ng-repeat="carros in carrosA">
+										<td>{{carros.placa}}</td>
+										<td>{{carros.ano}}</td>
+										<td>{{carros.modelo}}</td>
+										<td>{{carros.cor}}</td>
 									</tr>
 								</tbody>
 							</table>
@@ -185,7 +161,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-12">
-							<table class="table table-bordered table-condensed">
+							<table class="table table-striped table-condensed">
 								<thead>
 									<tr>
 										<th>Placa</th>
@@ -195,35 +171,11 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>KHI-3025</td>
-										<td>2015</td>
-										<td>HB-20</td>
-										<td>Prata</td>
-									</tr>
-									<tr class="active">
-										<td>KTT-2012</td>
-										<td>2016</td>
-										<td>Ford Ká</td>
-										<td>Branco</td>
-									</tr>
-									<tr class="success">
-										<td>ALT-2711</td>
-										<td>2016</td>
-										<td>Gol</td>
-										<td>Preto</td>
-									</tr>
-									<tr class="warning">
-										<td>OLC-8314</td>
-										<td>2016</td>
-										<td>Onix</td>
-										<td>Preto</td>
-									</tr>
-									<tr class="danger">
-										<td>IJE-6709</td>
-										<td>2015</td>
-										<td>Etios</td>
-										<td>Prata</td>
+									<tr ng-repeat="carros_b in carrosB">
+										<td>{{carros_b.placa}}</td>
+										<td>{{carros_b.ano}}</td>
+										<td>{{carros_b.modelo}}</td>
+										<td>{{carros_b.cor}}</td>
 									</tr>
 								</tbody>
 							</table>
@@ -261,35 +213,11 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>KHI-3025</td>
-										<td>2015</td>
-										<td>HB-20</td>
-										<td>Prata</td>
-									</tr>
-									<tr class="active">
-										<td>KTT-2012</td>
-										<td>2016</td>
-										<td>Ford Ká</td>
-										<td>Branco</td>
-									</tr>
-									<tr class="success">
-										<td>ALT-2711</td>
-										<td>2016</td>
-										<td>Gol</td>
-										<td>Preto</td>
-									</tr>
-									<tr class="warning">
-										<td>OLC-8314</td>
-										<td>2016</td>
-										<td>Onix</td>
-										<td>Preto</td>
-									</tr>
-									<tr class="danger">
-										<td>IJE-6709</td>
-										<td>2015</td>
-										<td>Etios</td>
-										<td>Prata</td>
+									<tr ng-repeat="carros_c in carrosC">
+										<td>{{carros_c.placa}}</td>
+										<td>{{carros_c.ano}}</td>
+										<td>{{carros_c.modelo}}</td>
+										<td>{{carros_c.cor}}</td>
 									</tr>
 								</tbody>
 							</table>
