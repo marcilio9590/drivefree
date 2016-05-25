@@ -16,7 +16,7 @@ $scope.adicionarCarro = function(){
 		
 		var categoria = [$scope.categoria,preco];
 		
-		var carro = {modelo: $scope.modelo, ano: $scope.ano,placa:$scope.placa,cor:$Scope.cor,categoria:categoria};
+		var carro = {modelo: $scope.modelo, ano: $scope.ano,placa:$scope.placa,cor: $scope.cor, categoria:categoria};
 		
 		$http.post("salvarCarro", carro, {
 			
@@ -26,7 +26,7 @@ $scope.adicionarCarro = function(){
 		
 		.then(function(response){
 			
-			$scope.carregarListaUsuarios();
+			//$scope.carregarListaUsuarios();
 			
 		}, function(response){
 			
