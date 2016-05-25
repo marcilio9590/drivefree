@@ -20,9 +20,22 @@ var CarroService = require('./carroService.js').CarroService;
 var carroServiceInstance = 
 					new CarroService(mongoose, appSchemaInstance);
 
+
 //servicos
 app.post('/salvarCarro', function (req, res) {
 	carroServiceInstance.salvarCarro(req.body, function(response){
+		res.send(response);
+	}, function(err){
+		res.send(err);
+	});
+});
+
+app.get('/getUser/:login/:password', function (req, res) {
+	var login = req.params.login;
+	var password = req.params.password;
+	
+	
+	carroServiceInstance.getLogin({login:login, password:password}, function(response){
 		res.send(response);
 	}, function(err){
 		res.send(err);

@@ -11,10 +11,12 @@ function AppSchema(mongoose){
 		createdOn: {type: Date, default: Date.now}
 	});
 	
-	
-	
-	
-	
+	this.loginSchema = new Schema({
+		user: String,
+		password: String,
+		active: String,
+		createdOn: {type: Date, default: Date.now}
+	});
 	
 	
 }
