@@ -14,7 +14,7 @@ $scope.adicionarCarro = function(){
 			preco = "75";
 		}
 		
-		var categoria = [$scope.categoria,preco];
+		var categoria = [{tipo:$scope.categoria,preco:preco}];
 		
 		var carro = {modelo: $scope.modelo, ano: $scope.ano,placa:$scope.placa,cor: $scope.cor, categoria:categoria};
 		
