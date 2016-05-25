@@ -36,6 +36,45 @@ angular.module("app").controller("adminController", function($scope, $http){
 		});
 
 	}
+	
+	$scope.carrosA = function(){
+		$http({
+			method: 'GET',
+			url: '/listaCarroA'
+		})
+		.then(function successCallback(response){
+			$scope.carrosA = response.data;
+		}, function errorCallback(response){
+			alert(response.data);	
+		});
+	}
+	$scope.carrosA();
+	
+	$scope.carrosB = function(){
+		$http({
+			method: 'GET',
+			url: '/listaCarroB'
+		})
+		.then(function successCallback(response){
+			$scope.carrosB = response.data;
+		}, function errorCallback(response){
+			alert(response.data);	
+		});
+	}
+	$scope.carrosB();
+	
+	$scope.carrosC = function(){
+		$http({
+			method: 'GET',
+			url: '/listaCarroC'
+		})
+		.then(function successCallback(response){
+			$scope.carrosC = response.data;
+		}, function errorCallback(response){
+			alert(response.data);	
+		});
+	}
+	$scope.carrosC();
 
 
 
