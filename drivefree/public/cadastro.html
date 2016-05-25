@@ -54,59 +54,59 @@
 			<div class="form-group">
 			<p id="cadastro">Cadastro Cliente</p>
 			      <label for="nome">Nome:</label>
-			      <input type="text" class="form-control" id="nome">
+			      <input type="text" class="form-control" ng-model="nome">
 			    </div>
 			    <div class="form-group">
 			      <label for="rg">Identidade (rg):</label>
-			      <input type="number" class="form-control" id="rg">
+			      <input type="number" class="form-control" ng-model="rg">
 			    </div>
 			    <div class="form-group">
 			      <label for="sexo">Sexo:</label>
-			      <input type="text" class="form-control" id="sexo">
+			      <input type="text" class="form-control" ng-model="sexo">
 			    </div>
 			    <div class="form-group">
 			      <label for="email">E-mail:</label>
-			      <input type="text" class="form-control" id="email">
+			      <input type="text" class="form-control" ng-model="email">
 			    </div>
 			    <div class="form-group">
 			    <div class="form-group">
 			      <label for="senha">Senha:</label>
-			      <input type="password" class="form-control" id="senha">
+			      <input type="password" class="form-control" ng-model="senha">
 			    </div>
 			<p id="campo-habilitacao">Habilitaçao</p>
 			      <label for="nHabilitacao">Nº da Habilitação:</label>
-			      <input type="number" class="form-control" id="nHabilitacao">
+			      <input type="number" class="form-control" ng-model="nHabilitacao">
 			    </div>
 			    <div class="form-group">
 			      <label for="validadeHabilitacao">Validade:</label>
-			      <input type="number" class="form-control" id="validadeHabilitacao">
+			      <input type="number" class="form-control" ng-model="validadeHabilitacao">
 			    </div>
 			<p id="campo-endereco">Endereço</p>
 			    <div class="form-group">
 			      <label for="cep">CEP:</label>
-			      <input type="number" class="form-control" id="cep">
+			      <input type="number" class="form-control" ng-model="cep">
 			    </div>
 			    <div class="form-group">
 			      <label for="endereco">Endereço:</label>
-			      <input type="text" class="form-control" id="endereco">
+			      <input type="text" class="form-control" ng-model="endereco">
 			    </div>
 			    <div class="form-group">
 			      <label for="bairro">Bairro:</label>
-			      <input type="text" class="form-control" id="bairro">
+			      <input type="text" class="form-control" ng-model="bairro">
 			    </div>
 			    <div class="form-group">
 			      <label for="cidade">Cidade:</label>
-			      <input type="text" class="form-control" id="cidade">
+			      <input type="text" class="form-control" ng-model="cidade">
 			    </div>
 			    <div class="form-group">
 			      <label for="telefone">Telefone:</label>
-			      <input type="number" class="form-control" id="telefone">
+			      <input type="number" class="form-control" ng-model="telefone">
 			    </div>
 			   </form>
-		<button class="btn btn-default" type="button">
+		<button class="btn btn-default" type="button" ng-click = "adicionarCliente()">
 			Confirmar
 		</button>
-		<button class="btn btn-default" type="button">
+		<button class="btn btn-default" type="button" ng-click = "limparCampos()">
 			Cancelar
 		</button> 
 
