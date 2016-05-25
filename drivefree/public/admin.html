@@ -53,11 +53,23 @@
 								<p>Modelo: <input class="form-control" type="text" ng-model = "modelo"  placeholder="Digite o modelo do veículo"></p>
 								<p>Ano: <input class="form-control" type="text" ng-model = "ano"  placeholder="Digite o ano do veículo"></p>
 								<p>Placa: <input class="form-control" type="text" ng-model = "placa"  placeholder="Digite a placa do veículo"></p>
-								<p>Cor: <input class="form-control" type="text" ng-model = "cor"  placeholder="Digite a cor do veículo"></p>
+								<p> Selecione a cor: <select class="form-control" ng-model="categoria" name="select">
+									<option value="Branco">Branco</option> 
+									<option value="Preto">Preto</option>
+									<option value="Prata">Prata</option>
+									<option value="Vermelho">Vermelho</option>
+								</select>
+								</p>
+								
+								<p> Selecione a categoria: <select class="form-control" ng-model="categoria" name="select">
+									<option value="A">A - Luxo</option> 
+									<option value="B">B - Intermediário</option>
+									<option value="C">C - Popular</option>
+								</select>
+								</p>
 								
 								
-								
-								<a class="btn btn-primary" href="#">Add</a>
+								<button ng-click="adicionarCarro()">Adicionar</button>
 							</p>
 						</div>
 					</div>
