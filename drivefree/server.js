@@ -8,8 +8,8 @@ app.use(express.static('public'));
 
 var mongoose = require('mongoose');
 var options = {
-  db: { native_parser: true },
-  server: { poolSize: 5 }
+		db: { native_parser: true },
+		server: { poolSize: 5 }
 }
 mongoose.connect('mongodb://10.42.3.205/drivefree', options);
 
@@ -18,11 +18,11 @@ var appSchemaInstance = new AppSchema(mongoose);
 
 var CarroService = require('./carroService.js').CarroService;
 var carroServiceInstance = 
-					new CarroService(mongoose, appSchemaInstance);
+	new CarroService(mongoose, appSchemaInstance);
 
 var ClienteService = require('./clienteService.js').ClienteService;
 var clienteServiceInstance = 
-					new ClienteService(mongoose, appSchemaInstance);
+	new ClienteService(mongoose, appSchemaInstance);
 
 
 //servicos
@@ -46,8 +46,8 @@ app.post('/salvarCliente', function (req, res) {
 app.get('/getUser/:login/:password', function (req, res) {
 	var login = req.params.login;
 	var password = req.params.password;
-	
-	
+
+
 	carroServiceInstance.getLogin({login:login, password:password}, function(response){
 		res.send(response);
 	}, function(err){
@@ -55,6 +55,34 @@ app.get('/getUser/:login/:password', function (req, res) {
 	});
 });
 
+app.get('/listaCarroA', function (req, res) {
+	carroServiceInstance.listaCarroA(function(response){
+		res.send(response);
+	}, function(err){
+		res.send(err);
+	});
+});
+
+app.get('/listaCarroB', function (req, res) {
+	carroServiceInstance.listaCarroB(function(response){
+		res.send(response);
+	}, function(err){
+		res.send(err);
+	});
+});
+
+app.get('/listaCarroC', function (req, res) {
+	carroServiceInstance.listaCarroC(function(response){
+		res.send(response);
+	}, function(err){
+		res.send(err);
+	});
+});
+
+
+
+
+
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+	console.log('Example app listening on port 3000!');
 });
