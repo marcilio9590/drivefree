@@ -7,7 +7,8 @@ function AppSchema(mongoose){
 		ano: String,
 		placa: String,
 		cor: String,
-		categoria: [{tipo: String, preco: String}],
+		tipo: String,
+		preco: String,
 		createdOn: {type: Date, default: Date.now}
 	});
 	
