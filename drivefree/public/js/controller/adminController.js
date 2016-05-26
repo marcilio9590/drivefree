@@ -1,6 +1,8 @@
 angular.module("app").controller("adminController", function($scope, $http){
 	$scope.carrosA = [];
-
+	$scope.active = 0;
+	$scope.user = {};
+	
 	$scope.limpar = function(){
 		$scope.modelo = '';
 		$scope.ano = '';
@@ -87,22 +89,28 @@ angular.module("app").controller("adminController", function($scope, $http){
 	
 	//--fim--
 	
-	/*
-	 deletar carro n funcional
-	$scope.excluirCarro = function(id){
-		$http.delete("deletarCarro/"+id)
-		.then(
-			function(response){
-				//$scope.listarEmpresa();
-			},
-			function(response){
-				alert(response.data);
-			});
-		//$scope.limpar();
+		
+	$scope.connectionUser = function() {
+		
+		$http({
+			  method: 'GET',
+			  url: '/sessaoConsultar'
+		}).then(function successCallback(response) {
+			$scope.user = response.data;
+			if ($scope.user.length != 0) {
 
+			} else {
+				//alert("Erro no login!\nTente novamente!");
+				$window.location.href = "../../erroacesso.html";
+			}
+			
+		}, function errorCallback(response){
+			alert(response.data);
+		});
 	}
-	*/
 	
+	$scope.connectionUser();
+
 	
 
 
