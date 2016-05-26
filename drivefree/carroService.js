@@ -53,6 +53,14 @@ function CarroService(mongoose, appSchema){
 			else successCallback(data);
 		});	
 	}
+	
+	this.listaCarro = function(successCallback, errorCallback){
+		Carro.find({},function (err, data){
+			if (err) errorCallback(err);
+
+			else successCallback(data);
+		});	
+	}
 
 	//funcao para login
 	this.getLogin = function(p_contato, successCallback, errorCallback){

@@ -104,6 +104,14 @@ app.get('/listaCarroC', function (req, res) {
 	});
 });
 
+app.get('/listaCarro', function (req, res) {
+	carroServiceInstance.listaCarro(function(response){
+		res.send(response);
+	}, function(err){
+		res.send(err);
+	});
+});
+
 app.delete('/deletarCarro/:id', function (req, res) {
 	var id = req.params.id;
 	carroServiceInstance.removerCarro(id, function(response){
