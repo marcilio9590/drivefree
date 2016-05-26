@@ -104,6 +104,23 @@ app.get('/listaCarroC', function (req, res) {
 	});
 });
 
+app.delete('/deletarCarro/:id', function (req, res) {
+	var id = req.params.id;
+	carroServiceInstance.removerCarro(id, function(response){
+		res.send(response);
+	}, function(err){
+		res.send(err);
+	});
+});
+
+app.put('/editarCarro', function (req, res) {
+	var carro = req.body;
+	carroServiceInstance.editarCarro(carro, function(response){
+		res.send(response);
+	}, function(err){
+		res.send(err);
+	});
+});
 
 
 app.listen(3000, function () {
