@@ -1,3 +1,13 @@
+.log {
+	display: block; 
+	position: absolute;
+	right: 0px;
+	top: 3%;
+
+	
+	
+}
+
 .navBar{
 
 	width: 100%;
@@ -11,14 +21,16 @@
 	font-weight: bold;
 
 }
+/* 
 .meio{
 	padding-left:15px;
 	padding-right:15px;
 
 }
+*/
 
 .header{
-	background-color: #FFFFFF;
+	background-color: white;
 	text-align: center;
 	padding: 0px;
 	font-family: verdana; 
@@ -62,6 +74,7 @@
 	border-right: 0px;
 
 }
+/*
 .contentServicos{
 
 	background-color: white;
@@ -70,20 +83,19 @@
 	margin: 0px;
 	
 }
+*/
 .footer{
 
-	background-color: #bcbcbc;
+	background-color: white;
 	padding-top: 1%;
-	border-top: 10px solid #4dff4d ;
+	border-top: 10px solid  ;
+	
 
 }
 
 body {
-	background-color: #FFFFFF;
+	
+	font-family: verdana; 
+	background-color: white;
+	
 }
-
-/* codigo para tabelas com scroll*/
-
-
-/*fim*/
-
