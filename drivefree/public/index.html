@@ -13,11 +13,23 @@
 	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700">
 
   </head>
   <body ng-controller = "indexController">
+	<div class="container-fluid">
+			<div class="row">
+			<div class="col-md- log">
+					<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/login.html';">
+					Portal do Administrador
+				</button>
+				
+		</div>
+	</div>
+</div>
 	<hr> </hr>
 	
+
     <div class="container-fluid">
 		<div class="row">
 			<div class="col-md- header">
@@ -30,30 +42,19 @@
 	<hr> </hr>
 	
 	<center> 
-	<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-4">
-		
-		
-		
-		
-		
-		
-		
-		</div>
-		
-		
-		
-		
-		<div class="col-md-4">
-		
-			<div class="btn-group navBar">
-			
-			
-					<ul class="nav nav-tabs">
-						<li class="active">
-									
-			 <button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/';">
+
+	<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\index.html" onclick="location.href='http://localhost:3000/'">Início</a></li>
+  <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\servicos.html" onclick="location.href='http://localhost:3000/servicos.html'" >Serviços</a></li>
+  <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\catalogo.html" onclick="location.href='http://localhost:3000/catalogo.html'">Catálogo</a></li>
+   <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\quemSomos.html" onclick="location.href='http://localhost:3000/quemSomos.html">Quem somos</a></li>
+    <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\cadastro.html" onclick="location.href='http://localhost:3000/cadastro.html">Contratar Serviços</a></li>
+</ul>
+	
+
+	
+						<!--			
+							<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/';">
 					 Início
 				</button> 
 				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/servicos.html';">
@@ -65,17 +66,7 @@
 				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/quemSomos.html';">
 					Quem Somos
 				</button>
-				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/login.html';">
-					Login
-				</button>
-
-			</div>
-		</div>
-					</ul>
-		<div class="col-md-4">
-		</div>
-	</div>
-</div>
+--> 
 	
 	<div class="row">
 		<div class="col-md-4">
@@ -138,23 +129,52 @@
 	<br> </br> 
 	<br> </br> 
 	
-	<div class="panel panel-default">
-  <div class="panel-heading">Panel heading</div>
-	<div class="row meio">
 	
-		<div class="col-md-9 content">
-  <div class="panel-body">
-    <p> 
+	<div class="container-fluid">
+			<div class="row">
+					<div class="col-md-8">
+					
+			<div class="panel panel-default">
+				<div class="panel-heading">Requisitos para Alugar um Carro no Brasil</div>
+			<div class="panel-body">
+				<p> 
 	
-				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. 
-				Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit.
-				Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus.
-				<em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus,
-				id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus.
-				<small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, 
-				et feugiat ipsum consequat eu.</small>
+				 <strong>IDADE MÍNIMA</strong>
+				 <br> </br>
+				O locatário/condutor deverá possuir idade mínima de 18 anos.
+				<br> </br> 
+				
+				<strong>CARTEIRA DE HABILITAÇÃO NACIONAL (CNH)</strong>
+				<br> </br>
+				
+				O locatário deverá apresentar seu documento de habilitação original, emitido há mais de 2 anos 
+				(CNH Definitiva), válido e dentro do prazo de vencimento.
+				<br> </br>
+				
+				 <strong> DOCUMENTO DE IDENTIDADE, CPF, PASSAPORTE </strong> 
+				 <br> </br>
+				
+				O locatário deverá apresentar seu documento RG e CPF originais e não poderá apresentar 
+				restrições de qualquer espécie junto aos órgãos de proteção ao crédito (SPC, SERASA) no momento da abertura de contrato junto a locadora. 
+				O locatário estrangeiro deverá apresentar seu documento Passaporte original e válido no momento da abertura de contrato junto a locadora.
+				Informamos também que a Central de Reservas Rentcars.com, para realizar a 
+				confirmação de sua solicitação, não faz nenhuma consulta prévia nos órgãos de proteção ao crédito.
+				Caso tenha alguma pendência financeira por favor nos informe, para que possamos lhe auxiliar
+				na busca de uma locadora que não possua este procedimento de consulta.
+				
+				<br> </br>
 			
-	</p>
+			<strong> IMPORTANTE</strong>
+			<br> </br>
+			
+			As locadoras se reservam no direito de recusar a alugar veículos a menores de idade, pessoas sem a carteira de habilitação, 
+			pessoas incapazes de demonstrar crédito para pagamento ou ainda pessoas que, 
+			na opinião da locadora, constituam um risco.
+			
+			</p>
+	
+			<br> </br>
+			<br> </br>
 			<p>
 				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>.
 				Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. 
@@ -164,25 +184,75 @@
 				Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, 
 				pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
 			</p>
-  </div>
+		</div>
 			
 		</div>
+					
+					
+					
+					</div>
+		<div class="col-md-4">
 		
-		<div class="col-md-1">
+		<div class="thumbnail">
+					<img src="css/imgs/carro1.png" alt="Fiat Novo Uno 1.0 ou similar">
+						<div class="caption">
+						<h3>Economico</h3>
+					<p>
+					Fiat Novo Uno 1.0
+					
+					</p>
+						
+				</div>
+			</div>
+			
+			<div class="thumbnail">
+					<img src="css/imgs/carro1.png" alt="Fiat Novo Uno 1.0 ou similar">
+						<div class="caption">
+						<h3>Economico</h3>
+					<p>
+					Fiat Novo Uno 1.0
+					
+					</p>
+						 
+				</div>
+			</div>
+			
+			<div class="thumbnail">
+					<img src="css/imgs/carro1.png" alt="Fiat Novo Uno 1.0 ou similar">
+						<div class="caption">
+						<h3>Economico</h3>
+					<p>
+					Fiat Novo Uno 1.0
+					
+					</p>
+						
+				</div>
+			</div>
+		
+		
 		</div>
-		<br> </br> 
+	</div>
+</div>
+	
+		
+	
+		<div class="col-md-8 content">
+		
+		<!--
+		
 		<div class="col-md-2 lista">			
 			<div class="container-grupo" style="display: inline-block;">
 				<div class="box-grupo">
-                	<h4>A - ECONOMICO <span>(ECMN)</span></h4>
+                	<h4>C - Popular <span>(ECMN)</span></h4>
                 	<p class="descricao-modelo">Fiat Novo Uno 1.0 ou similar</p>
                    	<div>
                     	<img src="css/imgs/carro1.png" alt="Fiat Novo Uno 1.0 ou similar">
                   	</div>
                    <p class="imagem-ilustrativa"></p>
                </div>
+			 
                	<div class="box-grupo">
-                	<h4>C - ECONOMICO COM AR<span>(EDMR)</span></h4>
+                	<h4>C - Popular com Ar<span>(EDMR)</span></h4>
                 	<p class="descricao-modelo">Novo Ford Ka Hatch SE 1.0 ou similar</p>
                    	<div>
                     	<img src="css/imgs/carro2.png" alt="Fiat Novo Uno 1.0 ou similar">
@@ -190,7 +260,7 @@
                    <p class="imagem-ilustrativa"></p>
                </div>
                	<div class="">
-                	<h4>F - INTERMEDIARIO<span>(SDMR)</span></h4>
+                	<h4>B - Intermediário<span>(SDMR)</span></h4>
                 	<p class="descricao-modelo">Novo Ford Ka + Sedan SE 1.5 ou similar</p>
                    	<div>
                     	<img src="css/imgs/carro3.png" alt="Fiat Novo Uno 1.0 ou similar">
@@ -199,15 +269,22 @@
                </div>
 			</div>
 		</div>
+		</div> --> 
 	</div>
 	<br> </br> 
+</div>
+		<br> </br> 
+		
+
+
 	<hr> </hr> 
 	
 	
 	
 	
 	<div class="row footer">
-		<div class="col-md-12">
+	
+		<div class="col-md-8">
 
 			<p>
 			Informações ao consumidor: Drive Free Rent a Car S/A
@@ -223,8 +300,19 @@
 			</p>
 
 		</div>
+	<div class="col-md-4">
+	
+		<a href="#" class="btn azm-social btn btn-primary dropdown-toggle azm-btn azm-border-bottom azm-facebook"><i class="fa fa-facebook"></i> Log in with Facebook</a> <br> </br>
+		<a href="#" class="btn azm-social btn btn-primary dropdown-toggle azm-btn azm-border-bottom azm-facebook"><i class="fa fa-facebook"></i> Log in with Facebook</a> <br> </br>
+			
+			<button type="button" class="btn btn-default" aria-label="Left Align">
+				<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+			</button>
+			
+		<br> </br> 	
+			
+		</div>
 	</div>
-</div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
