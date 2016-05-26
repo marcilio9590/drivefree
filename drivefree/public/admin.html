@@ -29,6 +29,7 @@
 					<p>
 					<center>Central de controle</center>
 					</p>
+					
 				</div>
 			</div>
 		</div>
@@ -38,7 +39,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="row">
-				
+					<div class="col-md-4">
+					</div>
 					<div class="col-md-4">
 						<div class="thumbnail">
 							<div class="caption">
@@ -81,6 +83,8 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-md-4">
+					</div>
 					
 				</div>
 			</div>
@@ -90,7 +94,7 @@
 
 
 
-
+<div id="lista_categorias">
 	<div class="col-md-4">
 		<div class="thumbnail">
 			<div class="caption">
@@ -99,14 +103,15 @@
 				</h3>
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-md-12">
-							<table class="table table-striped table-condensed">
+						<div class="col-md-13">
+							<table class="table table-striped table-condensed ">
 								<thead>
 									<tr>
 										<th>Placa</th>
 										<th>Ano</th>
 										<th>Modelo</th>
 										<th>Cor</th>
+										<th>Editar/Remover</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -115,6 +120,10 @@
 										<td>{{carros.ano}}</td>
 										<td>{{carros.modelo}}</td>
 										<td>{{carros.cor}}</td>
+										<td>
+											<button class="btn btn-primary btn-xs">Editar</button>
+											<button class="btn btn-danger btn-xs">Remover</button>
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -122,13 +131,6 @@
 					</div>
 				</div>
 
-				<p>
-				<center>
-					<a class="btn btn-primary" href="#">Add</a> <a
-						class="btn btn-warning" href="#">Alter</a> <a
-						class="btn btn-danger" href="#">Drop</a>
-				</center>
-				</p>
 			</div>
 		</div>
 	</div>
@@ -141,7 +143,7 @@
 				</h3>
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-13">
 							<table class="table table-striped table-condensed">
 								<thead>
 									<tr>
@@ -149,6 +151,7 @@
 										<th>Ano</th>
 										<th>Modelo</th>
 										<th>Cor</th>
+										<th>Editar/Remover</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -157,6 +160,10 @@
 										<td>{{carros_b.ano}}</td>
 										<td>{{carros_b.modelo}}</td>
 										<td>{{carros_b.cor}}</td>
+										<td>
+											<button class="btn btn-primary btn-xs">Editar</button>
+											<button class="btn btn-danger btn-xs">Remover</button>
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -164,13 +171,6 @@
 					</div>
 				</div>
 
-				<p>
-				<center>
-					<a class="btn btn-primary" href="#">Add</a> <a
-						class="btn btn-warning" href="#">Alter</a> <a
-						class="btn btn-danger" href="#">Drop</a>
-				</center>
-				</p>
 			</div>
 		</div>
 	</div>
@@ -183,14 +183,15 @@
 				</h3>
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-md-12">
-							<table class="table table-bordered table-condensed">
+						<div class="col-md-13">
+							<table class="table table-striped table-condensed">
 								<thead>
 									<tr>
 										<th>Placa</th>
 										<th>Ano</th>
 										<th>Modelo</th>
 										<th>Cor</th>
+										<th>Editar/Remover</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -199,6 +200,10 @@
 										<td>{{carros_c.ano}}</td>
 										<td>{{carros_c.modelo}}</td>
 										<td>{{carros_c.cor}}</td>
+										<td>
+											<button class="btn btn-primary btn-xs">Editar</button>
+											<button class="btn btn-danger btn-xs">Remover</button>
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -206,16 +211,10 @@
 					</div>
 				</div>
 
-				<p>
-				<center>
-					<a class="btn btn-primary" href="#">Add</a> <a
-						class="btn btn-warning" href="#">Alter</a> <a
-						class="btn btn-danger" href="#">Drop</a>
-				</center>
-				</p>
 			</div>
 		</div>
 	</div>
+</div>
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

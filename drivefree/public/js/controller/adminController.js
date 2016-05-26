@@ -1,5 +1,6 @@
 angular.module("app").controller("adminController", function($scope, $http){
-
+	$scope.carrosA = [];
+	
 	$scope.limpar = function(){
 		$scope.modelo = '';
 		$scope.ano = '';
@@ -26,11 +27,20 @@ angular.module("app").controller("adminController", function($scope, $http){
 			headers: {'Content-Type' : 'application/json'}
 		})
 		.then(function(response){
-
+			var obj = response.data;
+			var cat = obj.categoria;
+			
+			if(cat[0].tipo == "A"){
+				$scope.carrosA.push(obj);
+			}else if(cat[0].tipo == "B"){
+				$scope.carrosB.push(obj);
+			}else if(cat[0].tipo == "C"){
+				$scope.carrosC.push(obj);
+			}
 			$scope.limpar();
-
 		}, function(response){
-
+		
+			
 			alert(response.data);	
 
 		});
