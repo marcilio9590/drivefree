@@ -44,6 +44,19 @@ function CarroService(mongoose, appSchema){
 			else successCallback(data);
 		});	
 	}
+	
+	/*
+	 deletar carro nao funcional
+	this.removerCarro = function(id_carro, successCallback, errorCallback){
+		Carro.remove({"_id" : id_carro},function (err, data){
+			if (err) errorCallback(err);
+			else successCallback(data);
+		});	
+	}
+	
+	*/
+	
+	
 }
 
 

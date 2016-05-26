@@ -80,7 +80,18 @@ app.get('/listaCarroC', function (req, res) {
 	});
 });
 
+/*
+ deletar carro n funcional
+app.delete('/deletarCarro/:id', function (req, res) {
+	var id = req.params.id;
+	carroServiceInstance.removerCarro(id,function(response){
+		res.send(response);
+	}, function(err){
+		res.send(err);
+	});
+});
 
+*/
 
 
 

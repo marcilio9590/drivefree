@@ -1,6 +1,6 @@
 angular.module("app").controller("adminController", function($scope, $http){
 	$scope.carrosA = [];
-	
+
 	$scope.limpar = function(){
 		$scope.modelo = '';
 		$scope.ano = '';
@@ -29,7 +29,7 @@ angular.module("app").controller("adminController", function($scope, $http){
 		.then(function(response){
 			var obj = response.data;
 			var cat = obj.categoria;
-			
+
 			if(cat[0].tipo == "A"){
 				$scope.carrosA.push(obj);
 			}else if(cat[0].tipo == "B"){
@@ -39,14 +39,13 @@ angular.module("app").controller("adminController", function($scope, $http){
 			}
 			$scope.limpar();
 		}, function(response){
-		
-			
 			alert(response.data);	
-
 		});
 
 	}
+
 	
+	//listagem dos carros por categoria
 	$scope.carrosA = function(){
 		$http({
 			method: 'GET',
@@ -59,7 +58,7 @@ angular.module("app").controller("adminController", function($scope, $http){
 		});
 	}
 	$scope.carrosA();
-	
+
 	$scope.carrosB = function(){
 		$http({
 			method: 'GET',
@@ -72,7 +71,7 @@ angular.module("app").controller("adminController", function($scope, $http){
 		});
 	}
 	$scope.carrosB();
-	
+
 	$scope.carrosC = function(){
 		$http({
 			method: 'GET',
@@ -85,6 +84,26 @@ angular.module("app").controller("adminController", function($scope, $http){
 		});
 	}
 	$scope.carrosC();
+	
+	//--fim--
+	
+	/*
+	 deletar carro n funcional
+	$scope.excluirCarro = function(id){
+		$http.delete("deletarCarro/"+id)
+		.then(
+			function(response){
+				//$scope.listarEmpresa();
+			},
+			function(response){
+				alert(response.data);
+			});
+		//$scope.limpar();
+
+	}
+	*/
+	
+	
 
 
 
