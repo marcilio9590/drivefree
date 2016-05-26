@@ -117,11 +117,11 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 	$scope.removerCarro = function(carro){
 		var obj = carro;
 		if(obj.tipo == "A"){
-			$scope.carrosA.splice(obj,1);
+			$scope.listarCarrosA();
 		}else if(obj.tipo == "B"){
-			$scope.carrosB.splice(obj,1);
+			$scope.listarCarrosB();
 		}else if(obj.tipo == "C"){
-			$scope.carrosC.splice(obj,1);
+			$scope.listarCarrosC();
 		}
 
 		$http.delete("deletarCarro/"+obj._id)
