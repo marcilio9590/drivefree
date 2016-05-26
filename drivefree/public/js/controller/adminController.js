@@ -1,7 +1,28 @@
-angular.module("app").controller("adminController", function($scope, $http){
+angular.module("app").controller("adminController", function($scope, $http, $window){
 	$scope.carrosA = [];
 	$scope.active = 0;
 	$scope.user = {};
+
+	$scope.connectionUser = function() {
+		
+		$http({
+			  method: 'GET',
+			  url: '/sessaoConsultar'
+		}).then(function successCallback(response) {
+			$scope.user = response.data;
+			if ($scope.user.length != 0) {
+				$scope.active = 1;
+			} else {
+				//alert("Erro no login!\nTente novamente!");
+				$window.location.href = "../../erroacesso.html";
+			}
+			
+		}, function errorCallback(response){
+			alert(response.data);
+		});
+	}
+	
+	$scope.connectionUser();
 	
 	$scope.limpar = function(){
 		$scope.modelo = '';
@@ -90,28 +111,7 @@ angular.module("app").controller("adminController", function($scope, $http){
 	//--fim--
 	
 		
-	$scope.connectionUser = function() {
-		
-		$http({
-			  method: 'GET',
-			  url: '/sessaoConsultar'
-		}).then(function successCallback(response) {
-			$scope.user = response.data;
-			if ($scope.user.length != 0) {
 
-			} else {
-				//alert("Erro no login!\nTente novamente!");
-				$window.location.href = "../../erroacesso.html";
-			}
-			
-		}, function errorCallback(response){
-			alert(response.data);
-		});
-	}
-	
-	$scope.connectionUser();
-
-	
 
 
 
