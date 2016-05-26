@@ -2,6 +2,8 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 	$scope.carrosA = [];
 	$scope.active = 0;
 	$scope.user = {};
+	$scope.carroEditar = [];
+	$scope.id_carro_edit = null;
 
 	$scope.connectionUser = function() {
 		
@@ -69,7 +71,8 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 
 	
 	//listagem dos carros por categoria
-	$scope.carrosA = function(){
+
+	$scope.listarCarrosA = function(){
 		$http({
 			method: 'GET',
 			url: '/listaCarroA'
@@ -80,9 +83,10 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 			alert(response.data);	
 		});
 	}
-	$scope.carrosA();
 
-	$scope.carrosB = function(){
+
+
+	$scope.listarCarrosB = function(){
 		$http({
 			method: 'GET',
 			url: '/listaCarroB'
@@ -93,9 +97,9 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 			alert(response.data);	
 		});
 	}
-	$scope.carrosB();
 
-	$scope.carrosC = function(){
+
+	$scope.listarCarrosC = function(){
 		$http({
 			method: 'GET',
 			url: '/listaCarroC'
@@ -106,11 +110,69 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 			alert(response.data);	
 		});
 	}
-	$scope.carrosC();
-	
+
+
 	//--fim--
 	
-		
+	$scope.removerCarro = function(carro){
+		var obj = carro;
+		if(obj.tipo == "A"){
+			$scope.carrosA.splice(obj,1);
+		}else if(obj.tipo == "B"){
+			$scope.carrosB.splice(obj,1);
+		}else if(obj.tipo == "C"){
+			$scope.carrosC.splice(obj,1);
+		}
+
+		$http.delete("deletarCarro/"+obj._id)
+		.then(
+				function(response){	
+				},
+				function(response){
+					alert(response.data);
+				});
+	}
+
+
+	$scope.editarCarro = function(carro){
+		$scope.id_carro_edit = $scope.carroEditar._id;
+		$scope.carroEditar = carro;
+		$scope.modelo = $scope.carroEditar.modelo;
+		$scope.ano = $scope.carroEditar.ano;
+		$scope.placa = $scope.carroEditar.placa;
+		$scope.cor = $scope.carroEditar.cor;
+		$scope.categoria = $scope.carroEditar.tipo;
+	}
+
+	$scope.finalizarEdicao = function(){
+		var carro_Editando = {id:$scope.carroEditar._id, modelo: $scope.modelo, ano: $scope.ano, placa: $scope.placa, cor:$scope.cor, categoria:$scope.tipo};
+		$http.put("/editarCarro", carro_Editando,{
+			headers: {'Content-Type' : 'application/json'}
+		})
+		.then(function(response){
+			$scope.id_carro = null;
+			$scope.limpar();
+			console.log(response.data);
+			if($scope.carroEditar.tipo == "A"){
+				$scope.listarCarrosA();
+
+			}else if($scope.carroEditar.tipo == "B"){
+				$scope.listarCarrosB();
+			}else if($scope.carroEditar.tipo == "C"){
+				$scope.listarCarrosC();
+			}
+			$scope.carroEditar = null;
+
+		}, function(response){
+			alert(response.data);	
+		});
+	}
+
+
+	$scope.listarCarrosA();
+	$scope.listarCarrosB();
+	$scope.listarCarrosC();
+
 
 
 
