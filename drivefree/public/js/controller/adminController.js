@@ -22,19 +22,19 @@ angular.module("app").controller("adminController", function($scope, $http){
 		}
 
 		var categoria = [{tipo:$scope.categoria,preco:preco}];
-		var carro = {modelo: $scope.modelo, ano: $scope.ano,placa:$scope.placa,cor: $scope.cor, categoria:categoria};
+		var carro = {modelo: $scope.modelo, ano: $scope.ano,placa:$scope.placa,cor: $scope.cor, tipo:$scope.categoria, preco:preco};
 		$http.post("salvarCarro", carro, {
 			headers: {'Content-Type' : 'application/json'}
 		})
 		.then(function(response){
 			var obj = response.data;
-			var cat = obj.categoria;
+			
 
-			if(cat[0].tipo == "A"){
+			if(obj.tipo == "A"){
 				$scope.carrosA.push(obj);
-			}else if(cat[0].tipo == "B"){
+			}else if(obj.tipo == "B"){
 				$scope.carrosB.push(obj);
-			}else if(cat[0].tipo == "C"){
+			}else if(obj.tipo == "C"){
 				$scope.carrosC.push(obj);
 			}
 			$scope.limpar();
