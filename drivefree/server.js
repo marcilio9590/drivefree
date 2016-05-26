@@ -1,10 +1,16 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var active = "";
+
+var session = require('express-session');
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.use(session({ secret: 'mypass', 
+	saveUninitialized: false,
+	resave: false,				
+	cookie: { maxAge: 60000 }}));
+
 
 
 var mongoose = require('mongoose');
@@ -80,19 +86,24 @@ app.get('/listaCarroC', function (req, res) {
 	});
 });
 
-/*
- deletar carro n funcional
-app.delete('/deletarCarro/:id', function (req, res) {
-	var id = req.params.id;
-	carroServiceInstance.removerCarro(id,function(response){
-		res.send(response);
+
+app.post('/getUser', function (req, res) {
+	var obj = req.body
+	
+	
+	carroServiceInstance.getLogin({login:obj.user, password:obj.password}, function(response){
+		//res.send(response);
+		//console.log(response);
+		req.session.usuario = response;
+		res.send(req.session.usuario);
 	}, function(err){
 		res.send(err);
 	});
 });
 
-*/
-
+app.get('/sessaoConsultar', function (req, res) {
+	res.send(req.session.usuario);
+});
 
 
 app.listen(3000, function () {
