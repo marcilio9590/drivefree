@@ -16,48 +16,45 @@
 
   </head>
   <body ng-controller = "cadastroController">
-
-    <div class="container-fluid">
-    <div class="row">
-		<div class="col-md-12 header">
-			<div class="">
-				 <h1>DRIVE FREE</h1>
+  <hr> </hr> 
+  <div class="container-fluid">
+		<div class="row">
+			<div class="col-md- header">
+				<div class="">
+					<h1>DRIVE FREE</h1>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<div class="btn-group navBar">
-				 
-				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/';">
-					 Home
-				</button> 
-				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/servicos.html';">
-					Serviços
-				</button> 
-				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/catalogo.html';">
-					Catálogo
-				</button> 
-				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/quemSomos.html';">
-					Quem Somos
-				</button>
-				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/login.html';">
-					Login
-				</button>
-
-			</div>
+		
+	<hr> </hr>
+	
+	<center> 
+	
+	
+	<ul class="nav nav-tabs">
+  <li role="presentation" ><a href="C:\Users\treinamento\Desktop\git\drivefree\public\index.html" onclick="location.href='http://localhost:3000/'">Início</a></li>
+  <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\servicos.html" onclick="location.href='http://localhost:3000/servicos.html'" >Serviços</a></li>
+  <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\catalogo.html" onclick="location.href='http://localhost:3000/catalogo.html'">Catálogo</a></li>
+   <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\quemSomos.html" onclick="location.href='http://localhost:3000/quemSomos.html">Quem somos</a></li>
+      <li role="presentation"  class="active"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\cadastro.html" onclick="location.href='http://localhost:3000/cadastro.html">Contratar Serviços</a></li>
+	  
+</ul>
+	  <br/> 
+	  <br/>
 		</div>
 	</div>
 	<div class="row meio">
-		<div class="col-md-12 contentServicos">
+		<div class="col-md-3">
+		</div> 
+		<div class="col-md-6 contentServicos">
 			<form role="form">
 			<div class="form-group">
-			<p id="cadastro">Cadastro Cliente</p>
+			<h3> Cadastrar </h3> <br/>
 			      <label for="nome">Nome:</label>
 			      <input type="text" class="form-control" ng-model="nome">
 			    </div>
 			    <div class="form-group">
-			      <label for="rg">Identidade (rg):</label>
+			      <label for="rg">Identidade (RG) </label>
 			      <input type="number" class="form-control" ng-model="rg">
 			    </div>
 			    <div class="form-group">
@@ -73,7 +70,7 @@
 			      <label for="senha">Senha:</label>
 			      <input type="password" class="form-control" ng-model="senha">
 			    </div>
-			<p id="campo-habilitacao">Habilitaçao</p>
+			<h3> Habilitação </h3> <br/>
 			      <label for="nHabilitacao">Nº da Habilitação:</label>
 			      <input type="number" class="form-control" ng-model="nHabilitacao">
 			    </div>
@@ -81,14 +78,14 @@
 			      <label for="validadeHabilitacao">Validade:</label>
 			      <input type="number" class="form-control" ng-model="validadeHabilitacao">
 			    </div>
-			<p id="campo-endereco">Endereço</p>
-			    <div class="form-group">
-			      <label for="cep">CEP:</label>
-			      <input type="number" class="form-control" ng-model="cep">
-			    </div>
+			<h3> Endereço </h3> <br/>
 			    <div class="form-group">
 			      <label for="endereco">Endereço:</label>
 			      <input type="text" class="form-control" ng-model="endereco">
+			    </div>
+			    <div class="form-group">
+			      <label for="cep">CEP:</label>
+			      <input type="number" class="form-control" ng-model="cep">
 			    </div>
 			    <div class="form-group">
 			      <label for="bairro">Bairro:</label>
@@ -103,15 +100,19 @@
 			      <input type="number" class="form-control" ng-model="telefone">
 			    </div>
 			   </form>
-		<button class="btn btn-default" type="button" ng-click = "adicionarCliente()">
+				<button class="btn btn-default" type="button" ng-click = "adicionarCliente()">
 			Confirmar
 		</button>
 		<button class="btn btn-default" type="button" ng-click = "limparCampos()">
 			Cancelar
 		</button> 
-
+		<div class="col-md-3"> </div> 
 		</div>
 	</div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
 	<div class="row footer">
 		<div class="col-md-12">
 
