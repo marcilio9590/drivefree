@@ -14,7 +14,7 @@ function CarroService(mongoose, appSchema){
 	}
 
 	this.listaCarroA = function(successCallback, errorCallback){
-		Carro.find({"categoria.tipo":"A"},function (err, data){
+		Carro.find({tipo:"A"},function (err, data){
 			if (err) errorCallback(err);
 
 			else successCallback(data);
@@ -22,7 +22,7 @@ function CarroService(mongoose, appSchema){
 	}
 
 	this.listaCarroB = function(successCallback, errorCallback){
-		Carro.find({"categoria.tipo":"B"},function (err, data){
+		Carro.find({tipo:"B"},function (err, data){
 			if (err) errorCallback(err);
 
 			else successCallback(data);
@@ -30,7 +30,7 @@ function CarroService(mongoose, appSchema){
 	}
 
 	this.listaCarroC = function(successCallback, errorCallback){
-		Carro.find({"categoria.tipo":"C"},function (err, data){
+		Carro.find({tipo:"C"},function (err, data){
 			if (err) errorCallback(err);
 
 			else successCallback(data);
