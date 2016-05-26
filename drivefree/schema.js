@@ -1,7 +1,7 @@
 function AppSchema(mongoose){
 	var Schema = mongoose.Schema;
-	
-	
+
+
 	this.carroSchema = new Schema({
 		modelo: String,
 		ano: String,
@@ -12,20 +12,19 @@ function AppSchema(mongoose){
 		disponivel:String,
 		createdOn: {type: Date, default: Date.now}
 	});
-	
+
 	this.loginSchema = new Schema({
 		user: String,
 		password: String,
 		active: String,
 		createdOn: {type: Date, default: Date.now}
 	});
-	
+
 	this.clienteSchema = new Schema({
 		nome: String,
 		identidade: String,
 		sexo: String,
 		email: String,
-		senha: String,
 		nHabilitacao: String,
 		validade: String,
 		cep: String,
@@ -35,8 +34,19 @@ function AppSchema(mongoose){
 		telefone: String,
 		createdOn: {type: Date, default: Date.now}
 	});
-	
-	
+
+	this.pedidoSchema = new Schema({
+		placa:String,
+		modelo:String,
+		nomeCliente:String,
+		identidade:String,
+		email:String,
+		telefone:String,
+		nHabilitacao:String,
+		createdOn: {type: Date, default: Date.now}
+	});
+
+
 }
 
 module.exports.AppSchema = AppSchema;

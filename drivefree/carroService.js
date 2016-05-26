@@ -1,7 +1,7 @@
 function CarroService(mongoose, appSchema){
 	var Carro = mongoose.model("Carro", appSchema.carroSchema);	
 	var Login = mongoose.model("Login", appSchema.loginSchema);	 
-
+	var Pedido = mongoose.model("Pedido", appSchema.pedidoSchema);	 
 
 	this.salvarCarro = function(p_contato, successCallback, errorCallback){
 		var carroSave = new Carro(p_contato);
@@ -13,6 +13,18 @@ function CarroService(mongoose, appSchema){
 		});	
 	}
 
+	this.salvarPedido = function(p_contato, successCallback, errorCallback){
+		var pedidoSave = new Pedido(p_contato);
+
+		pedidoSave.save(function (err, data){
+			if (err) errorCallback(err);
+
+			else successCallback(data);
+		});	
+	}
+
+
+
 	this.editarCarro = function(carro, successCallback, errorCallback){
 		Carro.update({_id: carro.id},
 				{$set: {modelo: carro.modelo,ano:carro.ano,placa:carro.placa,cor:carro.cor,categoria:carro.categoria}},function (err, data){
@@ -21,7 +33,7 @@ function CarroService(mongoose, appSchema){
 					else successCallback(data);
 				});	
 	}
-	
+
 	this.removerCarro = function(id, successCallback, errorCallback){
 		Carro.remove({_id:id},function (err, data){
 			if (err) errorCallback(err);
@@ -53,7 +65,7 @@ function CarroService(mongoose, appSchema){
 			else successCallback(data);
 		});	
 	}
-	
+
 	this.listaCarro = function(successCallback, errorCallback){
 		Carro.find({},function (err, data){
 			if (err) errorCallback(err);

@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html ng-app = "app" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html ng-app="app" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cadastro</title>
+<title>Cadastro</title>
 
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-    
-	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+<meta name="description"
+	content="Source code generated using layoutit.com">
+<meta name="author" content="LayoutIt!">
 
-  </head>
-  <body ng-controller = "cadastroController">
-  <hr> </hr> 
-  <div class="container-fluid">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+</head>
+<body ng-controller="cadastroController">
+
+
+	<hr>
+	</hr>
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md- header">
 				<div class="">
@@ -25,117 +30,261 @@
 				</div>
 			</div>
 		</div>
-		
-	<hr> </hr>
-	
-	<center> 
-	
-	
-	<ul class="nav nav-tabs">
-  <li role="presentation" ><a href="C:\Users\treinamento\Desktop\git\drivefree\public\index.html" onclick="location.href='http://localhost:3000/'">Início</a></li>
-  <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\servicos.html" onclick="location.href='http://localhost:3000/servicos.html'" >Serviços</a></li>
-  <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\catalogo.html" onclick="location.href='http://localhost:3000/catalogo.html'">Catálogo</a></li>
-   <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\quemSomos.html" onclick="location.href='http://localhost:3000/quemSomos.html'">Quem somos</a></li>
-      <li role="presentation"  class="active"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\cadastro.html" onclick="location.href='http://localhost:3000/cadastro.html'">Contratar Serviços</a></li>
-	  
-</ul>
-	  <br/> 
-	  <br/>
+
+		<hr>
+		</hr>
+
+		<center>
+
+
+			<ul class="nav nav-tabs">
+				<li role="presentation"><a
+					href="C:\Users\treinamento\Desktop\git\drivefree\public\index.html"
+					onclick="location.href='http://localhost:3000/'">Início</a></li>
+				<li role="presentation"><a
+					href="C:\Users\treinamento\Desktop\git\drivefree\public\servicos.html"
+					onclick="location.href='http://localhost:3000/servicos.html'">Serviços</a></li>
+				<li role="presentation"><a
+					href="C:\Users\treinamento\Desktop\git\drivefree\public\catalogo.html"
+					onclick="location.href='http://localhost:3000/catalogo.html'">Catálogo</a></li>
+				<li role="presentation"><a
+					href="C:\Users\treinamento\Desktop\git\drivefree\public\quemSomos.html"
+					onclick="location.href='http://localhost:3000/quemSomos.html'">Quem
+						somos</a></li>
+				<li role="presentation" class="active"><a
+					href="C:\Users\treinamento\Desktop\git\drivefree\public\cadastro.html"
+					onclick="location.href='http://localhost:3000/cadastro.html'">Contratar
+						Serviços</a></li>
+
+			</ul>
+			<br /> <br />
+	</div>
+	</div>
+
+
+
+	<div ng-model="cad_cliente" ng-show="exibir == 0">
+
+		<div class="row meio">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 contentServicos">
+				<form role="form">
+					<div class="form-group">
+						<h3>Cadastrar</h3>
+						<br /> <label for="nome">Nome:</label> <input type="text"
+							class="form-control" ng-model="nome">
+					</div>
+					<div class="form-group">
+						<label for="rg">Identidade (RG) </label> <input type="number"
+							class="form-control" ng-model="rg">
+					</div>
+					<div class="form-group">
+						<label for="sexo">Sexo:</label> <select class="form-control"
+							ng-model="sexo">
+							<option value="Feminino">Feminino</option>
+							<option value="Masculino">Masculino</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="email">E-mail:</label> <input type="text"
+							class="form-control" ng-model="email">
+					</div>
+					<div class="form-group">
+						<h3>Habilitação</h3>
+						<br /> <label for="nHabilitacao">Nº da Habilitação:</label> <input
+							type="number" class="form-control" ng-model="nHabilitacao">
+					</div>
+					<div class="form-group">
+						<label for="validadeHabilitacao">Validade:</label> <input
+							type="number" class="form-control" ng-model="validadeHabilitacao">
+					</div>
+					<h3>Endereço</h3>
+					<br />
+					<div class="form-group">
+						<label for="endereco">Endereço:</label> <input type="text"
+							class="form-control" ng-model="endereco">
+					</div>
+					<div class="form-group">
+						<label for="cep">CEP:</label> <input type="number"
+							class="form-control" ng-model="cep">
+					</div>
+					<div class="form-group">
+						<label for="bairro">Bairro:</label> <input type="text"
+							class="form-control" ng-model="bairro">
+					</div>
+					<div class="form-group">
+						<label for="cidade">Cidade:</label> <input type="text"
+							class="form-control" ng-model="cidade">
+					</div>
+					<div class="form-group">
+						<label for="telefone">Telefone:</label> <input type="number"
+							class="form-control" ng-model="telefone">
+					</div>
+				</form>
+				<button class="btn btn-info" type="button"
+					ng-click="adicionarCliente()">Próximo</button>
+				<button class="btn btn-danger" type="button"
+					ng-click="limparCampos()">Cancelar</button>
+				<div class="col-md-3"></div>
+			</div>
+		</div>
+
+	</div>
+	<!-- FECHAMENTO DA DIV CAD CLIENTE -->
+
+
+
+	<!-- Abertura da div de escolha do carro -->
+	<div ng-model="escolha_carro" ng-show="exibir == 1">
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4"></div>
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<h3>Escolha a categoria do veículo</h3>
+						<center>
+							<br /> <br /> <select class="form-control"
+								ng-change="carregarCarros()" ng-model="tipo.tipo">
+								<option value="">--Selecione--</option>
+								<option value="A">A - Luxo</option>
+								<option value="B">B - Intermediário</option>
+								<option value="C">C - Econômico</option>
+							</select>
+						</center>
+
+						<br /> <br />
+						<table class="table table-striped table-condensed">
+							<thead>
+
+								<tr>
+									<th>Modelo</th>
+									<th>Ano</th>
+									<th>Cor</th>
+									<th>Tipo</th>
+									<th>Preço</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="carros in arrayCarros | filter: tipo">
+									<td>{{carros.modelo}}</td>
+									<td>{{carros.ano}}</td>
+									<td>{{carros.cor}}</td>
+									<td>{{carros.tipo}}</td>
+									<td>{{carros.preco}}</td>
+									<td><input class="btn btn-success" type="button"
+										value="Escolher" ng-click="salvarPedido(carros)" /></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="row meio">
-		<div class="col-md-3">
-		</div> 
-		<div class="col-md-6 contentServicos">
-			<form role="form">
-			<div class="form-group">
-			<h3> Cadastrar </h3> <br/>
-			      <label for="nome">Nome:</label>
-			      <input type="text" class="form-control" ng-model="nome">
-			    </div>
-			    <div class="form-group">
-			      <label for="rg">Identidade (RG) </label>
-			      <input type="number" class="form-control" ng-model="rg">
-			    </div>
-			    <div class="form-group">
-			      <label for="sexo">Sexo:</label>
-			      <input type="text" class="form-control" ng-model="sexo">
-			    </div>
-			    <div class="form-group">
-			      <label for="email">E-mail:</label>
-			      <input type="text" class="form-control" ng-model="email">
-			    </div>
-			    <div class="form-group">
-			    <div class="form-group">
-			      <label for="senha">Senha:</label>
-			      <input type="password" class="form-control" ng-model="senha">
-			    </div>
-			<h3> Habilitação </h3> <br/>
-			      <label for="nHabilitacao">Nº da Habilitação:</label>
-			      <input type="number" class="form-control" ng-model="nHabilitacao">
-			    </div>
-			    <div class="form-group">
-			      <label for="validadeHabilitacao">Validade:</label>
-			      <input type="number" class="form-control" ng-model="validadeHabilitacao">
-			    </div>
-			<h3> Endereço </h3> <br/>
-			    <div class="form-group">
-			      <label for="endereco">Endereço:</label>
-			      <input type="text" class="form-control" ng-model="endereco">
-			    </div>
-			    <div class="form-group">
-			      <label for="cep">CEP:</label>
-			      <input type="number" class="form-control" ng-model="cep">
-			    </div>
-			    <div class="form-group">
-			      <label for="bairro">Bairro:</label>
-			      <input type="text" class="form-control" ng-model="bairro">
-			    </div>
-			    <div class="form-group">
-			      <label for="cidade">Cidade:</label>
-			      <input type="text" class="form-control" ng-model="cidade">
-			    </div>
-			    <div class="form-group">
-			      <label for="telefone">Telefone:</label>
-			      <input type="number" class="form-control" ng-model="telefone">
-			    </div>
-			   </form>
-				<button class="btn btn-info" type="button" ng-click = "adicionarCliente()">
-			Confirmar
-		</button>
-		<button class="btn btn-danger" type="button" ng-click = "limparCampos()">
-			Cancelar
-		</button> 
-		<div class="col-md-3"> </div> 
+	<!-- Fechamdno da div de escolha do carro -->
+
+	<div ng-model="confirmacao" ng-show="exibir == 2">
+
+		<div class="panel panel-info">
+
+			<br />
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+						<form role="form">
+							<div class="form-group">
+								<h3>Dados do Cliente</h3>
+								<br /> <label for="nome">Nome:</label>
+								<p>{{arrayPedido.nomeCliente}}</p>
+								<!--    <input type="text" class="form-control" ng-model="nome"> -->
+							</div>
+							<div class="form-group">
+								<label for="rg">Identidade (RG) </label>
+								<p>{{arrayPedido.identidade}}</p>
+								<!--   <input type="number" class="form-control" ng-model="rg"> -->
+							</div>
+
+							<div class="form-group">
+								<label for="email">E-mail:</label>
+								<p>{{arrayPedido.email}}</p>
+								<!--    <input type="text" class="form-control" ng-model="email"> -->
+							</div>
+							<div class="form-group">
+								<label for="telefone">Telefone:</label>
+								<p>{{arrayPedido.telefone}}</p>
+								<!--  <input type="number" class="form-control" ng-model="telefone"> -->
+							</div>
+							<div class="form-group">
+
+								<label for="nHabilitacao">Nº da Habilitação:</label>
+								<p>{{arrayPedido.nHabilitacao}}</p>
+								<!--   <input type="number" class="form-control" ng-model="nHabilitacao"> -->
+							</div>
+						</form>
+
+
+					</div>
+					<div class="col-md-6">
+
+						<h3>Dados do Veiculo</h3>
+						<br />
+						<div class="form-group">
+							<label for="placa">Placa:</label>
+							<p>{{arrayPedido.placa}}</p>
+							<!--<input type="text" class="form-control" ng-model="placa"> -->
+						</div>
+
+						<div class="form-group">
+							<label for="modelo"><h4>Modelo:</h4></label>
+							<p>{{arrayPedido.modelo}}</p>
+							<!--
+			      <p type="text" class="form-control" ng-model="modelo">  </p>-->
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+
+		<button class="btn btn-info" type="button" ng-click="concluirPedido()">Finalizar</button>
+		<button class="btn btn-danger" type="button" ng-click="voltarIndex()">Cancelar</button>
 	</div>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
+
+
+
+	<br />
+	<br />
+	<br />
+	<br />
 	<div class="row footer">
 		<div class="col-md-12">
 
-			<p>
-			Informações ao consumidor: Drive Free Rent a Car S/A
-			</p>
-			<p>
-			Sede: Avenida Bernardo Monteiro, nº 1563 - Funcionários - CEP: 30150-902 - Belo Horizonte - MG.
-			</p>
-			<p>
-			Central de Reservas 24h: 0800 979 2000 | Asssistência a Clientes 24h: 0800 979 2020
-			</p>
-			<p>
-			E-mail: centraldereservas@drivefree.com
-			</p>
+			<p>Informações ao consumidor: Drive Free Rent a Car S/A</p>
+			<p>Sede: Avenida Bernardo Monteiro, nº 1563 - Funcionários - CEP:
+				30150-902 - Belo Horizonte - MG.</p>
+			<p>Central de Reservas 24h: 0800 979 2000 | Asssistência a
+				Clientes 24h: 0800 979 2020</p>
+			<p>E-mail: centraldereservas@drivefree.com</p>
 
 		</div>
 	</div>
-</div>
+	</div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src = "js/app.js"></script>
-    <script src = "js/controller/cadastroController.js"></script>
-  </body>
+	</div>
+
+
+
+
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controller/cadastroController.js"></script>
+</body>
 </html>

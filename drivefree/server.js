@@ -36,8 +36,8 @@ var clienteServiceInstance =
 //servicos
 app.post('/getUser', function (req, res) {
 	var obj = req.body
-	
-	
+
+
 	carroServiceInstance.getLogin({login:obj.user, password:obj.password}, function(response){
 		//res.send(response);
 		//console.log(response);
@@ -47,6 +47,26 @@ app.post('/getUser', function (req, res) {
 		res.send(err);
 	});
 });
+
+app.get('/getCliente', function (req, res) {
+	var obj = req.body
+
+
+	carroServiceInstance.getLogin({login:obj.user, password:obj.password}, function(response){
+		//res.send(response);
+		//console.log(response);
+		req.session.usuario = response;
+		res.send(req.session.usuario);
+	}, function(err){
+		res.send(err);
+	});
+});
+
+app.get('/sessaoConsultar_cliente', function (req, res) {
+	res.send(req.session.cliente);
+});
+
+
 
 app.get('/sessaoConsultar', function (req, res) {
 	res.send(req.session.usuario);
@@ -60,15 +80,26 @@ app.post('/salvarCarro', function (req, res) {
 	});
 });
 
-//servico salvar cliente
-app.post('/salvarCliente', function (req, res) {
-	clienteServiceInstance.salvarCliente(req.body, function(response){
+app.post('/salvarPedido', function (req, res) {
+	carroServiceInstance.salvarPedido(req.body, function(response){
 		res.send(response);
 	}, function(err){
 		res.send(err);
 	});
 });
 
+
+//servico salvar cliente
+app.post('/salvarCliente', function (req, res) {
+	clienteServiceInstance.salvarCliente(req.body, function(response){
+		req.session.cliente = response;
+		res.send(req.session.cliente);
+	}, function(err){
+		res.send(err);
+	});
+});
+
+/*
 app.post('/getUser', function (req, res) {
 	var obj = req.body
 
@@ -79,7 +110,7 @@ app.post('/getUser', function (req, res) {
 		res.send(err);
 	});
 });
-
+ */
 app.get('/listaCarroA', function (req, res) {
 	carroServiceInstance.listaCarroA(function(response){
 		res.send(response);

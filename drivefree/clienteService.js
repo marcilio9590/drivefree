@@ -10,6 +10,12 @@ function ClienteService(mongoose, appSchema){
 			else successCallback(data);
 		});	
 	}
+	
+	
+	
+	
+	
+	
 }
 
 module.exports.ClienteService = ClienteService;
