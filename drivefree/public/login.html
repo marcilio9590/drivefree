@@ -16,21 +16,42 @@
 
   </head>
   <body ng-controller = "loginController">
+  
+		<hr> </hr>
+	
 
     <div class="container-fluid">
-    <div class="row">
-		<div class="col-md-12 header">
-			<div class="">
-				 <h1>DRIVE FREE</h1>
+		<div class="row">
+			<div class="col-md- header">
+				<div class="">
+					<h1>DRIVE FREE</h1>
+				</div>
 			</div>
 		</div>
-	</div>
+		
+	<hr> </hr>
+	
+	<center> 
+	
+	<ul class="nav nav-pills nav-justified">
+  <li role="presentation" ><a href="C:\Users\treinamento\Desktop\git\drivefree\public\index.html" onclick="location.href='http://localhost:3000/'">Início</a></li>
+  <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\servicos.html" onclick="location.href='http://localhost:3000/servicos.html'" >Serviços</a></li>
+  <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\catalogo.html" onclick="location.href='http://localhost:3000/catalogo.html'">Catálogo</a></li>
+   <li role="presentation"><a href="C:\Users\treinamento\Desktop\git\drivefree\public\quemSomos.html" onclick="location.href='http://localhost:3000/quemSomos.html">Quem somos</a></li>
+</ul>
+
+<!--
+	<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-7">
 			<div class="btn-group navBar">
-				 
-				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/';">
-					 Home
+					<ul class="nav nav-tabs">
+						<li class="active">
+									
+							<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/';">
+					 Início
 				</button> 
 				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/servicos.html';">
 					Serviços
@@ -41,36 +62,67 @@
 				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/quemSomos.html';">
 					Quem Somos
 				</button>
-				<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/login.html';">
-					Login
-				</button>
 
 			</div>
 		</div>
-	</div>
-	<div class="row meio">
-		<div class="col-md-12 contentServicos">
-			<form role="form">
-			    <div class="form-group">
+		-->
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+		
+		</div>
+		<div class="col-md-4">
+		<form role="form">
+			   <div class="form-group">
 			      <label for="email">E-mail:</label>
-			      <input type="text" class="form-control" ng-model="login">
+			      <input type="text" class="form-control" ng-model="email">
 			    </div>
 			    <div class="form-group">
 			      <label for="senha">Senha:</label>
-			      <input type="password" class="form-control" ng-model="password">
+			      <input type="password" class="form-control" ng-model="senha">
 			    </div>
 			  </form>
-		<button class="btn btn-default" type="button" ng-click="efetuarLogin()">
+			<button class="btn btn-default" type="button" ng-click="efetuarLogin()">
 			Logar
 		</button>
 		<button class="btn btn-default" type="button" onclick="location.href='http://localhost:3000/cadastro.html';" >
 			Cadastrar
 		</button> 
-
+		</div>
+		<div class="col-md-4">
+		
+		
+		
 		</div>
 	</div>
+</div>
+  
+  
+  
+  
+  
+  
+  
+
+    
+	
+		</div>
+	</div>
+	<br/> 
+	<br/> 
+	<br/> 
+	<br/> 
+	<br/> 
+	<br/> 
+	<br/> 
+	<br/> 
 	<div class="row footer">
-		<div class="col-md-12">
+		<div class="col-md-8">
 
 			<p>
 			Informações ao consumidor: Drive Free Rent a Car S/A
@@ -86,6 +138,8 @@
 			</p>
 
 		</div>
+		<div class="col-md-4"> 
+		</div> 
 	</div>
 </div>
 
