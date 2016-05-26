@@ -112,6 +112,14 @@ app.get('/listaCarro', function (req, res) {
 	});
 });
 
+app.get('/listarPedidos', function (req, res) {
+	carroServiceInstance.listarPedidos(function(response){
+		res.send(response);
+	}, function(err){
+		res.send(err);
+	});
+});
+
 app.delete('/deletarCarro/:id', function (req, res) {
 	var id = req.params.id;
 	carroServiceInstance.removerCarro(id, function(response){
@@ -124,6 +132,15 @@ app.delete('/deletarCarro/:id', function (req, res) {
 app.put('/editarCarro', function (req, res) {
 	var carro = req.body;
 	carroServiceInstance.editarCarro(carro, function(response){
+		res.send(response);
+	}, function(err){
+		res.send(err);
+	});
+});
+
+app.put('/finalizarPedido', function (req, res) {
+	var pedido = req.body;
+	carroServiceInstance.finalizarPedido(pedido, function(response){
 		res.send(response);
 	}, function(err){
 		res.send(err);

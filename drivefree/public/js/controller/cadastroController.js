@@ -130,6 +130,7 @@ angular.module("app").controller("cadastroController", function($scope, $http, $
 				identidade:cliente.rg,
 				email:cliente.email,
 				telefone:cliente.telefone,
+				status:"1",
 				nHabilitacao:cliente.nHabilitacao
 		};
 		$scope.exibir = 2;

@@ -42,6 +42,7 @@ function AppSchema(mongoose){
 		identidade:String,
 		email:String,
 		telefone:String,
+		status:String,
 		nHabilitacao:String,
 		createdOn: {type: Date, default: Date.now}
 	});

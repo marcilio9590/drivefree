@@ -3,6 +3,7 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 	$scope.active = 0;
 	$scope.user = {};
 	$scope.carroEditar = [];
+	$scope.arrayPedidos = [];
 	$scope.id_carro_edit = null;
 
 	$scope.connectionUser = function() {
@@ -167,8 +168,39 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 			alert(response.data);	
 		});
 	}
+	
+	
+	$scope.finalizarPedido = function(pedido){
+		var pedido_edit = pedido;
+		$http.put("/finalizarPedido", pedido_edit,{
+			headers: {'Content-Type' : 'application/json'}
+		})
+		.then(function(response){
+			console.log(response.data);
+			$scope.listarPedidos();
+		}, function(response){
+			alert(response.data);	
+		});
+	}
+	
+	
+	$scope.listarPedidos = function(){
+		$http({
+			method: 'GET',
+			url: '/listarPedidos'
+		})
+		.then(function successCallback(response){
+			$scope.arrayPedidos = response.data;
+		}, function errorCallback(response){
+			alert(response.data);	
+		});
+	}
+	
+	
+	
+	
 
-
+	$scope.listarPedidos();
 	$scope.listarCarrosA();
 	$scope.listarCarrosB();
 	$scope.listarCarrosC();
