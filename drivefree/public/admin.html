@@ -121,8 +121,8 @@
 										<td>{{carros.modelo}}</td>
 										<td>{{carros.cor}}</td>
 										<td>
-											<button class="btn btn-primary btn-xs">Editar</button>
-											<button class="btn btn-danger btn-xs">Remover</button>
+											<button ng-click="editarCarro(carros)" class="btn btn-primary btn-xs">Editar</button>
+											<button ng-click="removerCarro(carros)" class="btn btn-danger btn-xs">Remover</button>
 										</td>
 									</tr>
 								</tbody>
@@ -161,8 +161,8 @@
 										<td>{{carros_b.modelo}}</td>
 										<td>{{carros_b.cor}}</td>
 										<td>
-											<button class="btn btn-primary btn-xs">Editar</button>
-											<button class="btn btn-danger btn-xs">Remover</button>
+											<button ng-click="editarCarro(carros_b)" class="btn btn-primary btn-xs">Editar</button>
+											<button ng-click="removerCarro(carros_b)" class="btn btn-danger btn-xs">Remover</button>
 										</td>
 									</tr>
 								</tbody>
@@ -201,8 +201,8 @@
 										<td>{{carros_c.modelo}}</td>
 										<td>{{carros_c.cor}}</td>
 										<td>
-											<button class="btn btn-primary btn-xs">Editar</button>
-											<button class="btn btn-danger btn-xs">Remover</button>
+										<button ng-click="editarCarro(carros_c)" class="btn btn-primary btn-xs">Editar</button>
+											<button ng-click="removerCarro(carros_c)" class="btn btn-danger btn-xs">Remover</button>
 										</td>
 									</tr>
 								</tbody>
