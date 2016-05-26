@@ -6,9 +6,12 @@ angular.module("app").controller("loginController", function($scope, $http, $win
 	
 	$scope.efetuarLogin = function() {
 		if ($scope.login.length != 0 && $scope.password.length != 0) {
-			$http({
-				method: 'GET',
-				url: '/getUser/'+$scope.login+"/"+$scope.password
+			var user = {
+				user: $scope.login,
+				password: $scope.password
+			}
+			$http.post("/getUser", user, {
+				headers: {'Content-Type' : 'application/json'}
 			}).then(function successCallback(response) {
 				$scope.user = response.data;
 				if ($scope.user.length != 0) {
