@@ -9,6 +9,7 @@ function AppSchema(mongoose){
 		cor: String,
 		tipo: String,
 		preco: String,
+		disponivel:String;
 		createdOn: {type: Date, default: Date.now}
 	});
 	
