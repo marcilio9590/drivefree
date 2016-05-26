@@ -13,6 +13,23 @@ function CarroService(mongoose, appSchema){
 		});	
 	}
 
+	this.editarCarro = function(carro, successCallback, errorCallback){
+		Carro.update({_id: carro.id},
+				{$set: {modelo: carro.modelo,ano:carro.ano,placa:carro.placa,cor:carro.cor,categoria:carro.categoria}},function (err, data){
+					if (err) errorCallback(err);
+
+					else successCallback(data);
+				});	
+	}
+	
+	this.removerCarro = function(id, successCallback, errorCallback){
+		Carro.remove({_id:id},function (err, data){
+			if (err) errorCallback(err);
+
+			else successCallback(data);
+		});	
+	}
+
 	this.listaCarroA = function(successCallback, errorCallback){
 		Carro.find({tipo:"A"},function (err, data){
 			if (err) errorCallback(err);
@@ -44,19 +61,9 @@ function CarroService(mongoose, appSchema){
 			else successCallback(data);
 		});	
 	}
-	
-	/*
-	 deletar carro nao funcional
-	this.removerCarro = function(id_carro, successCallback, errorCallback){
-		Carro.remove({"_id" : id_carro},function (err, data){
-			if (err) errorCallback(err);
-			else successCallback(data);
-		});	
-	}
-	
-	*/
-	
-	
+
+
+
 }
 
 
