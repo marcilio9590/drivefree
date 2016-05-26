@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var active = "";
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -44,13 +45,12 @@ app.post('/salvarCliente', function (req, res) {
 	});
 });
 
-app.get('/getUser/:login/:password', function (req, res) {
-	var login = req.params.login;
-	var password = req.params.password;
+app.post('/getUser', function (req, res) {
+	var obj = req.body
 
-
-	carroServiceInstance.getLogin({login:login, password:password}, function(response){
+	carroServiceInstance.getLogin({login:obj.user, password:obj.password}, function(response){
 		res.send(response);
+		active = obj.active;
 	}, function(err){
 		res.send(err);
 	});
