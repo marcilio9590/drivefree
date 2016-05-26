@@ -48,26 +48,6 @@ app.post('/getUser', function (req, res) {
 	});
 });
 
-app.get('/getCliente', function (req, res) {
-	var obj = req.body
-
-
-	carroServiceInstance.getLogin({login:obj.user, password:obj.password}, function(response){
-		//res.send(response);
-		//console.log(response);
-		req.session.usuario = response;
-		res.send(req.session.usuario);
-	}, function(err){
-		res.send(err);
-	});
-});
-
-app.get('/sessaoConsultar_cliente', function (req, res) {
-	res.send(req.session.cliente);
-});
-
-
-
 app.get('/sessaoConsultar', function (req, res) {
 	res.send(req.session.usuario);
 });
@@ -99,18 +79,7 @@ app.post('/salvarCliente', function (req, res) {
 	});
 });
 
-/*
-app.post('/getUser', function (req, res) {
-	var obj = req.body
 
-	carroServiceInstance.getLogin({login:obj.user, password:obj.password}, function(response){
-		res.send(response);
-		active = obj.active;
-	}, function(err){
-		res.send(err);
-	});
-});
- */
 app.get('/listaCarroA', function (req, res) {
 	carroServiceInstance.listaCarroA(function(response){
 		res.send(response);
