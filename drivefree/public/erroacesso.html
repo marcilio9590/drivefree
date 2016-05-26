@@ -17,7 +17,7 @@
 <link href="css/style.css" rel="stylesheet">
 
 </head>
-<body ng-controller="adminController">
+<body ng-controller="erroController">
 	<div>
 	
 		<div class="container-fluid">
@@ -30,7 +30,10 @@
 						<p>
 							Por favor, entre com um usuário e senha com autorização.
 						</p>
-			
+						</br>
+						<button class="btn btn-danger" type="button" ng-click="showLogin()">
+						Efetuar login
+						</button>
 					</div>
 				</div>
 			</div>
@@ -41,10 +44,6 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/app.js"></script>
-	<script src="js/controller/adminController.js"></script>
+	<script src="js/controller/erroController.js"></script>
 </body>
 </html>
-
-
-
-
