@@ -19,10 +19,10 @@ function CarroService(mongoose, appSchema){
 		var pedidoSave = new Pedido(p_contato);
 
 		pedidoSave.save(function (err, data){		
-		//Carro.update({_id:id_carro},{$set:{status:"0"}},function (err, data){
+		Carro.update({_id:id_carro},{$set:{status:"0"}},function (err, data){
 			if (err) errorCallback(err);
 			else successCallback(data);
-		//});	
+		});	
 		//perguntar a vitor como fica para dar um save e um update ao mesmo tempo
 		});	
 	}
