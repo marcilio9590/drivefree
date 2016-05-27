@@ -18,7 +18,7 @@ var options = {
 		db: { native_parser: true },
 		server: { poolSize: 5 }
 }
-mongoose.connect('mongodb://localhost/drivefree', options);
+mongoose.connect('mongodb://10.42.3.205/drivefree', options);
 
 var AppSchema = require('./schema.js').AppSchema;
 var appSchemaInstance = new AppSchema(mongoose);
