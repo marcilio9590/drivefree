@@ -18,7 +18,6 @@ var options = {
 		db: { native_parser: true },
 		server: { poolSize: 5 }
 }
-//mongoose.connect('mongodb://10.42.3.205/drivefree', options);
 mongoose.connect('mongodb://localhost/drivefree', options);
 
 var AppSchema = require('./schema.js').AppSchema;
@@ -39,8 +38,6 @@ app.post('/getUser', function (req, res) {
 
 
 	carroServiceInstance.getLogin({login:obj.user, password:obj.password}, function(response){
-		//res.send(response);
-		//console.log(response);
 		req.session.usuario = response;
 		res.send(req.session.usuario);
 	}, function(err){
@@ -49,6 +46,11 @@ app.post('/getUser', function (req, res) {
 });
 
 app.get('/sessaoConsultar', function (req, res) {
+	res.send(req.session.usuario);
+});
+
+app.get('/logout', function (req, res) {	
+	req.session.usuario = null;
 	res.send(req.session.usuario);
 });
 

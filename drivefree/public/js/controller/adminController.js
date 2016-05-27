@@ -6,28 +6,50 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 	$scope.arrayPedidos = [];
 	$scope.id_carro_edit = null;
 	$scope.indexEditar = null;
+	$scope.logando  = "";
 	
-	
+	//function conecta usuario
 	$scope.connectionUser = function() {
-
+		
 		$http({
-			method: 'GET',
-			url: '/sessaoConsultar'
+			  method: 'GET',
+			  url: '/sessaoConsultar'
 		}).then(function successCallback(response) {
 			$scope.user = response.data;
-			if ($scope.user.length != 0) {
+			if ($scope.user != undefined && $scope.user.length != 0) {
 				$scope.active = 1;
+				$scope.logando = $scope.user[0].user;
 			} else {
-				//alert("Erro no login!\nTente novamente!");
 				$window.location.href = "../../erroacesso.html";
 			}
-
+			
 		}, function errorCallback(response){
 			alert(response.data);
 		});
 	}
 
-	$scope.connectionUser();
+       $scope.connectionUser();
+	
+//function de sair
+	$scope.logout = function () {
+		$http({
+			  method: 'GET',
+			  url: '/logout'
+		}).then(function successCallback(response) {
+			$scope.user = response.data;
+			
+			
+			$window.location.href = "../../login.html";
+			
+			
+		}, function errorCallback(response){
+			alert(response.data);
+		});
+	}
+
+	$scope.chamarHome = function () {
+		$window.location.href = "../../index.html";
+	}
 
 	$scope.limpar = function(){
 		$scope.modelo = '';
@@ -210,9 +232,7 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 	$scope.listarCarrosA();
 	$scope.listarCarrosB();
 	$scope.listarCarrosC();
-
-
-
+	$scope.connectionUser();
 
 
 });

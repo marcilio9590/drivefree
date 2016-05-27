@@ -29,7 +29,17 @@
 					<p>
 					<center>Central de controle</center>
 					</p>
-
+					<div class="col-md- log">
+						<button class="btn btn-primary" type="button" ng-click="chamarHome()">
+						Home
+						</button>
+					</div>
+					<div class="col-md- log2">
+						<label>Usuário conectado: {{logando}}</label>
+						<button class="btn btn-warning" type="button" ng-click="logout()">
+						Logout
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

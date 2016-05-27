@@ -1,11 +1,16 @@
 .log {
 	display: block; 
 	position: absolute;
-	right: 0px;
+	left: 2%;
 	top: 3%;
+	
+}
 
-	
-	
+.log2 {
+	display: block; 
+	position: absolute;
+	right: 2%;
+	top: 3%;	
 }
 
 .navBar{
