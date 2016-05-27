@@ -63,63 +63,64 @@
 		<div class="row meio">
 			<div class="col-md-3"></div>
 			<div class="col-md-6 contentServicos">
-				<form role="form">
+				<form name="formCliente" role="form">
 					<div class="form-group">
 						<h3>Cadastrar</h3>
 						<br /> <label for="nome">Nome:</label> <input type="text"
-							class="form-control" ng-model="nome">
+							class="form-control" ng-model="nome" ng-required = "true" >
 					</div>
 					<div class="form-group">
-						<label for="rg">Identidade (RG) </label> <input type="number"
-							class="form-control" ng-model="rg">
+						<label for="rg">Identidade (RG) </label> <input type="text"
+							class="form-control" onkeypress="return mascara(this, '######',event)" maxlength="7"  ng-model="rg" ng-required = "true">
 					</div>
 					<div class="form-group">
 						<label for="sexo">Sexo:</label> <select class="form-control"
-							ng-model="sexo">
+							ng-model="sexo" ng-required = "true">
 							<option value="Feminino">Feminino</option>
 							<option value="Masculino">Masculino</option>
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="email">E-mail:</label> <input type="text"
-							class="form-control" ng-model="email">
+						<label for="email">E-mail:</label> <input  type="text"
+							class="form-control" ng-model="email" ng-required = "true">
 					</div>
 					<div class="form-group">
 						<h3>Habilitação</h3>
 						<br /> <label for="nHabilitacao">Nº da Habilitação:</label> <input
-							type="number" class="form-control" ng-model="nHabilitacao">
+							type="text" onkeypress="return mascara(this, '###########',event)" maxlength="11" class="form-control"  ng-model="nHabilitacao" ng-required = "true">
 					</div>
 					<div class="form-group">
 						<label for="validadeHabilitacao">Validade:</label> <input
-							type="number" class="form-control" ng-model="validadeHabilitacao">
+							type="text" class="form-control" maxlength="10" onkeypress="return mascara(this, '##/##/####',event)" 
+							ng-model="validadeHabilitacao" ng-required = "true">
 					</div>
 					<h3>Endereço</h3>
 					<br />
 					<div class="form-group">
 						<label for="endereco">Endereço:</label> <input type="text"
-							class="form-control" ng-model="endereco">
+							class="form-control"  ng-model="endereco" ng-required = "true">
 					</div>
 					<div class="form-group">
-						<label for="cep">CEP:</label> <input type="number"
-							class="form-control" ng-model="cep">
+						<label for="cep">CEP:</label> <input maxlength="10" onkeypress="return mascara(this, '##.###-###',event)" type="text"
+							class="form-control"  ng-model="cep" ng-required = "true">
 					</div>
 					<div class="form-group">
 						<label for="bairro">Bairro:</label> <input type="text"
-							class="form-control" ng-model="bairro">
+							class="form-control"  ng-model="bairro" ng-required = "true">
 					</div>
 					<div class="form-group">
 						<label for="cidade">Cidade:</label> <input type="text"
-							class="form-control" ng-model="cidade">
+							class="form-control"  ng-model="cidade" ng-required = "true">
 					</div>
 					<div class="form-group">
-						<label for="telefone">Telefone:</label> <input type="number"
-							class="form-control" ng-model="telefone">
+						<label for="telefone">Telefone:</label> <input maxlength="10" onkeypress="return mascara(this, '#####-####',event)" type="text"
+							class="form-control"  ng-model="telefone" ng-required = "true">
 					</div>
-				</form>
-				<button class="btn btn-info" type="button"
-					ng-click="adicionarCliente()">Próximo</button>
+				
+				<button class="btn btn-info" type="submit" ng-disabled="formCliente.$invalid" ng-click="adicionarCliente()">Próximo</button>
 				<button class="btn btn-danger" type="button"
-					ng-click="limparCampos()">Cancelar</button>
+					ng-click="limparCampos()">Cancelar</button> 
+				</form>
 				<div class="col-md-3"></div>
 			</div>
 		</div>
@@ -281,5 +282,6 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/controller/cadastroController.js"></script>
+	<script src="js/mascara.js"></script>
 </body>
 </html>

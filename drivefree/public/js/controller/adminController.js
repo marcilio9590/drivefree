@@ -5,7 +5,9 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 	$scope.carroEditar = [];
 	$scope.arrayPedidos = [];
 	$scope.id_carro_edit = null;
-
+	$scope.indexEditar = null;
+	
+	
 	$scope.connectionUser = function() {
 
 		$http({
@@ -138,6 +140,7 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 
 
 	$scope.editarCarro = function(carro){
+		$scope.indexEditar = "1";
 		$scope.id_carro_edit = $scope.carroEditar._id;
 		$scope.carroEditar = carro;
 		$scope.modelo = $scope.carroEditar.modelo;
@@ -165,6 +168,7 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 				$scope.listarCarrosC();
 			}
 			$scope.carroEditar = null;
+			$scope.indexEditar = null;
 
 		}, function(response){
 			alert(response.data);	
