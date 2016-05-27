@@ -57,11 +57,11 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 			
 
 			if(obj.tipo == "A"){
-				$scope.carrosA.push(obj);
+				$scope.listarCarrosA();
 			}else if(obj.tipo == "B"){
-				$scope.carrosB.push(obj);
+				$scope.listarCarrosB();
 			}else if(obj.tipo == "C"){
-				$scope.carrosC.push(obj);
+				$scope.listarCarrosC();
 			}
 			$scope.limpar();
 		}, function(response){
@@ -117,17 +117,18 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 	
 	$scope.removerCarro = function(carro){
 		var obj = carro;
-		if(obj.tipo == "A"){
-			$scope.listarCarrosA();
-		}else if(obj.tipo == "B"){
-			$scope.listarCarrosB();
-		}else if(obj.tipo == "C"){
-			$scope.listarCarrosC();
-		}
+	
 
 		$http.delete("deletarCarro/"+obj._id)
 		.then(
 				function(response){	
+					if(obj.tipo == "A"){
+						$scope.listarCarrosA();
+					}else if(obj.tipo == "B"){
+						$scope.listarCarrosB();
+					}else if(obj.tipo == "C"){
+						$scope.listarCarrosC();
+					}
 				},
 				function(response){
 					alert(response.data);

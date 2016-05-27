@@ -9,7 +9,7 @@ app.use(express.static('public'));
 app.use(session({ secret: 'mypass', 
 	saveUninitialized: false,
 	resave: false,				
-	cookie: { maxAge: 60000 }}));
+	cookie: { maxAge: 600000 }}));
 
 
 
@@ -18,8 +18,8 @@ var options = {
 		db: { native_parser: true },
 		server: { poolSize: 5 }
 }
-mongoose.connect('mongodb://10.42.3.205/drivefree', options);
-//mongoose.connect('mongodb://localhost/drivefree', options);
+//mongoose.connect('mongodb://10.42.3.205/drivefree', options);
+mongoose.connect('mongodb://localhost/drivefree', options);
 
 var AppSchema = require('./schema.js').AppSchema;
 var appSchemaInstance = new AppSchema(mongoose);
