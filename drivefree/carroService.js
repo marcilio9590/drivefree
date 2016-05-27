@@ -15,7 +15,7 @@ function CarroService(mongoose, appSchema){
 	}
 
 	this.salvarPedido = function(p_contato, successCallback, errorCallback){
-		var id_carro = p_contato.id;
+		var id_carro = p_contato.id_carro;
 		var pedidoSave = new Pedido(p_contato);
 
 		pedidoSave.save(function (err, data){		
@@ -27,15 +27,19 @@ function CarroService(mongoose, appSchema){
 		});	
 	}
 
-
+	
 
 	this.finalizarPedido = function(pedido, successCallback, errorCallback){
 		Pedido.update({_id: pedido._id},
 				{$set: {status:"0"}},function (err, data){
+		Carro.update({_id: pedido.id_carro},
+				{$set: {status:"1"}},function (err, data){
 					if (err) errorCallback(err);
 
 					else successCallback(data);
 				});	
+				});	
+		
 	}
 	
 	this.editarCarro = function(carro, successCallback, errorCallback){

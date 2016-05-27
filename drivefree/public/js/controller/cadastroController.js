@@ -28,12 +28,11 @@ angular.module("app").controller("cadastroController", function($scope, $http, $
 				function(response) {
 					$scope.exibir = 1;
 					$scope.objCliente = cliente;
-					//$window.location.href = '../../selecionarCarro.html';
 
-				},
-				function(response) {
-					alert(response.data);
 				}
+				/*function(response) {
+					alert(response.data);
+				}*/
 		);
 	}
 	
@@ -108,13 +107,13 @@ angular.module("app").controller("cadastroController", function($scope, $http, $
 		.then(
 				function(response) {
 					$scope.exibir = 2;
-					$scope.arrayPedido = pedido;			
-					//$window.location.href = '../../final.html';
-
-				},
-				function(response) {
-					alert(response.data);
+					$scope.arrayPedido = pedido;	
+					
 				}
+				/*function(response) {
+					alert(response.data);
+					
+				}*/
 		);
 	}
 	
@@ -125,7 +124,7 @@ angular.module("app").controller("cadastroController", function($scope, $http, $
 		var cliente = $scope.objCliente;
 		
 		var pedido = {
-				id: carros._id,
+				id_carro: carros._id,
 				placa:carroEscolhido.placa,
 				modelo:carroEscolhido.modelo,
 				nomeCliente:cliente.nome,
@@ -144,7 +143,7 @@ angular.module("app").controller("cadastroController", function($scope, $http, $
 		$scope.GravarPedido();
 		$scope.SalvarCliente();
 		
-		alert('Seu pedido foi cadastrado');
+		alert('Seu pedido foi cadastrado\n Vá até a locadora, retire o veículo e efetue o pagamento.');
 		$window.location.href = '../../index.html';
 	}
 	

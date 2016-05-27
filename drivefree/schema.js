@@ -35,6 +35,7 @@ function AppSchema(mongoose){
 	});
 
 	this.pedidoSchema = new Schema({
+		id_carro:String,
 		placa:String,
 		modelo:String,
 		nomeCliente:String,
