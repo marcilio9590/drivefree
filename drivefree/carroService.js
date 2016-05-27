@@ -4,8 +4,8 @@ function CarroService(mongoose, appSchema){
 	var Pedido = mongoose.model("Pedido", appSchema.pedidoSchema);	
 
 
-	this.salvarCarro = function(p_contato, successCallback, errorCallback){
-		var carroSave = new Carro(p_contato);
+	this.salvarCarro = function(carro, successCallback, errorCallback){
+		var carroSave = new Carro(carro);
 
 		carroSave.save(function (err, data){
 			if (err) errorCallback(err);
@@ -19,9 +19,15 @@ function CarroService(mongoose, appSchema){
 
 		pedidoSave.save(function (err, data){
 			if (err) errorCallback(err);
-
 			else successCallback(data);
 		});	
+		/*
+		Carro.update({_id:p_contato.id},{$set:{status:"0"}},function (err, data){
+			if (err) errorCallback(err);
+			else successCallback(data);
+		});	
+		perguntar a vitor como fica para dar um save e um update ao mesmo tempo
+		*/
 	}
 
 
@@ -78,7 +84,7 @@ function CarroService(mongoose, appSchema){
 	}
 
 	this.listaCarro = function(successCallback, errorCallback){
-		Carro.find({},function (err, data){
+		Carro.find({status:"1"},function (err, data){ //status 1 carro disponivel
 			if (err) errorCallback(err);
 
 			else successCallback(data);

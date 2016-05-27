@@ -1,7 +1,6 @@
 function AppSchema(mongoose){
 	var Schema = mongoose.Schema;
 
-
 	this.carroSchema = new Schema({
 		modelo: String,
 		ano: String,
@@ -9,7 +8,7 @@ function AppSchema(mongoose){
 		cor: String,
 		tipo: String,
 		preco: String,
-		disponivel:String,
+		status: String,
 		createdOn: {type: Date, default: Date.now}
 	});
 
@@ -46,7 +45,6 @@ function AppSchema(mongoose){
 		nHabilitacao:String,
 		createdOn: {type: Date, default: Date.now}
 	});
-
 
 }
 

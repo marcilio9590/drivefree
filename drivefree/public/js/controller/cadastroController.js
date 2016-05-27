@@ -123,7 +123,9 @@ angular.module("app").controller("cadastroController", function($scope, $http, $
 	$scope.salvarPedido = function (carros) {
 		var carroEscolhido = carros;
 		var cliente = $scope.objCliente;
+		
 		var pedido = {
+				id: carros._id,
 				placa:carroEscolhido.placa,
 				modelo:carroEscolhido.modelo,
 				nomeCliente:cliente.nome,

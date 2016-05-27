@@ -7,10 +7,10 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 	$scope.id_carro_edit = null;
 
 	$scope.connectionUser = function() {
-		
+
 		$http({
-			  method: 'GET',
-			  url: '/sessaoConsultar'
+			method: 'GET',
+			url: '/sessaoConsultar'
 		}).then(function successCallback(response) {
 			$scope.user = response.data;
 			if ($scope.user.length != 0) {
@@ -19,14 +19,14 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 				//alert("Erro no login!\nTente novamente!");
 				$window.location.href = "../../erroacesso.html";
 			}
-			
+
 		}, function errorCallback(response){
 			alert(response.data);
 		});
 	}
-	
+
 	$scope.connectionUser();
-	
+
 	$scope.limpar = function(){
 		$scope.modelo = '';
 		$scope.ano = '';
@@ -48,13 +48,14 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 		}
 
 		var categoria = [{tipo:$scope.categoria,preco:preco}];
-		var carro = {modelo: $scope.modelo, ano: $scope.ano,placa:$scope.placa,cor: $scope.cor, tipo:$scope.categoria, preco:preco};
+		var carro = {modelo: $scope.modelo, ano: $scope.ano,placa:$scope.placa,
+				cor: $scope.cor, tipo:$scope.categoria, preco:preco,status:"1"};
 		$http.post("salvarCarro", carro, {
 			headers: {'Content-Type' : 'application/json'}
 		})
 		.then(function(response){
 			var obj = response.data;
-			
+
 
 			if(obj.tipo == "A"){
 				$scope.listarCarrosA();
@@ -70,7 +71,7 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 
 	}
 
-	
+
 	//listagem dos carros por categoria
 
 	$scope.listarCarrosA = function(){
@@ -114,10 +115,10 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 
 
 	//--fim--
-	
+
 	$scope.removerCarro = function(carro){
 		var obj = carro;
-	
+
 
 		$http.delete("deletarCarro/"+obj._id)
 		.then(
@@ -169,8 +170,8 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 			alert(response.data);	
 		});
 	}
-	
-	
+
+
 	$scope.finalizarPedido = function(pedido){
 		var pedido_edit = pedido;
 		$http.put("/finalizarPedido", pedido_edit,{
@@ -183,8 +184,8 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 			alert(response.data);	
 		});
 	}
-	
-	
+
+
 	$scope.listarPedidos = function(){
 		$http({
 			method: 'GET',
@@ -196,10 +197,10 @@ angular.module("app").controller("adminController", function($scope, $http, $win
 			alert(response.data);	
 		});
 	}
-	
-	
-	
-	
+
+
+
+
 
 	$scope.listarPedidos();
 	$scope.listarCarrosA();
