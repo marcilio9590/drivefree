@@ -15,19 +15,16 @@ function CarroService(mongoose, appSchema){
 	}
 
 	this.salvarPedido = function(p_contato, successCallback, errorCallback){
+		var id_carro = p_contato.id;
 		var pedidoSave = new Pedido(p_contato);
 
-		pedidoSave.save(function (err, data){
+		pedidoSave.save(function (err, data){		
+		//Carro.update({_id:id_carro},{$set:{status:"0"}},function (err, data){
 			if (err) errorCallback(err);
 			else successCallback(data);
+		//});	
+		//perguntar a vitor como fica para dar um save e um update ao mesmo tempo
 		});	
-		/*
-		Carro.update({_id:p_contato.id},{$set:{status:"0"}},function (err, data){
-			if (err) errorCallback(err);
-			else successCallback(data);
-		});	
-		perguntar a vitor como fica para dar um save e um update ao mesmo tempo
-		*/
 	}
 
 
